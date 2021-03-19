@@ -130,6 +130,12 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\heart.png" />
+    <Content Include="Assets\Images\info.png" />
+    <Content Include="Assets\Images\log_cabin.png" />
+    <Content Include="Assets\Images\photo.jpg" />
+    <Content Include="Assets\Images\place_marker.png" />
+    <Content Include="Assets\Images\settings.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

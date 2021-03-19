@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Composition;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +27,16 @@ namespace Greetings
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void element_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            ImagesStoryboard.Begin();
+        }
+
+        private void element_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+        
         }
     }
 }

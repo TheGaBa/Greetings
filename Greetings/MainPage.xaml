@@ -7,8 +7,47 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Storyboard x:Name="ImagesStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.6000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
 
     <Grid>
+        <Grid.ColumnDefinitions>
 
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid Background="#4680E2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="90"/>
+                </Grid.RowDefinitions>
+
+
+                <Rectangle Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="45" RadiusX="15" RadiusY="15" >
+                    <Rectangle.Fill>
+                        <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Images/photo.jpg" />
+                    </Rectangle.Fill>
+                </Rectangle>
+
+                <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Image x:Name="image" Source="/Assets/Images/log_cabin.png" Height="30" Width="30" Margin="0,20,0,20" PointerExited="element_PointerExited" PointerEntered="element_PointerEntered"/>
+                    <Image Source="/Assets/Images/place_marker.png" Height="30" Width="30" Margin="0,20,0,20" PointerExited="element_PointerExited" PointerEntered="element_PointerEntered"/>
+                    <Image Source="/Assets/Images/heart.png" Height="30" Width="30" Margin="0,20,0,20" PointerExited="element_PointerExited" PointerEntered="element_PointerEntered"/>
+                    <Image Source="/Assets/Images/info.png" Height="30" Width="30" Margin="0,20,0,20" PointerExited="element_PointerExited" PointerEntered="element_PointerEntered"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="50" Background="Red"/>
+
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

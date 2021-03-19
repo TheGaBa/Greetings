@@ -2,6 +2,7 @@
     x:Class="Greetings.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Greetings">
+    xmlns:local="using:Greetings"
+    RequestedTheme="Light">
 
 </Application>
