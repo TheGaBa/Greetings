@@ -48,5 +48,10 @@ namespace Greetings
         {
             PointerEnterAnimationInfo.Begin();
         }
+
+        private void element_PointerEnteredExit(object sender, PointerRoutedEventArgs e)
+        {
+            PointerEnterAnimationExit.Begin();
+        }
     }
 }
