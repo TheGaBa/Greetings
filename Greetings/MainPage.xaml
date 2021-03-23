@@ -1,20 +1,55 @@
 ﻿<Page
-    x:Class="Greetings.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Greetings"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="using:System.Numerics" x:Name="page"
+    x:Class="Greetings.MainPage"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    >
     <Page.Resources>
-        <Storyboard x:Name="ImagesStoryboard">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.Opacity)">
+        <Storyboard x:Name="PointerEnterAnimationHome">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="-9"/>
                 <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="00:00:01.6000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="PointerEnterAnimationLocation">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="-9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="PointerEnterAnimationFavorite">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="-9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="PointerEnterAnimationInfo">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="-9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Page.Resources>
+
+    <Page.Background>
+        <ThemeResource ResourceKey="ApplicationPageBackgroundThemeBrush"/>
+    </Page.Background>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -31,7 +66,6 @@
                     <RowDefinition Height="90"/>
                 </Grid.RowDefinitions>
 
-
                 <Rectangle Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="45" RadiusX="15" RadiusY="15" >
                     <Rectangle.Fill>
                         <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Images/photo.jpg" />
@@ -39,10 +73,38 @@
                 </Rectangle>
 
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                    <Image x:Name="image" Source="/Assets/Images/log_cabin.png" Height="30" Width="30" Margin="0,20,0,20" PointerExited="element_PointerExited" PointerEntered="element_PointerEntered"/>
-                    <Image Source="/Assets/Images/place_marker.png" Height="30" Width="30" Margin="0,20,0,20" PointerExited="element_PointerExited" PointerEntered="element_PointerEntered"/>
-                    <Image Source="/Assets/Images/heart.png" Height="30" Width="30" Margin="0,20,0,20" PointerExited="element_PointerExited" PointerEntered="element_PointerEntered"/>
-                    <Image Source="/Assets/Images/info.png" Height="30" Width="30" Margin="0,20,0,20" PointerExited="element_PointerExited" PointerEntered="element_PointerEntered"/>
+                    <Image x:Name="image" Source="/Assets/Images/log_cabin.png" Height="30" Width="30" Margin="0,20,0,20" PointerEntered="element_PointerEnteredHome" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <CompositeTransform/>
+                        </Image.RenderTransform>
+                        <Image.Projection>
+                            <PlaneProjection/>
+                        </Image.Projection>
+                    </Image>
+                    <Image x:Name="image1" Source="/Assets/Images/place_marker.png" Height="30" Width="30" Margin="0,20,0,20" PointerEntered="element_PointerEnteredLocation" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <CompositeTransform/>
+                        </Image.RenderTransform>
+                        <Image.Projection>
+                            <PlaneProjection/>
+                        </Image.Projection>
+                    </Image>
+                    <Image x:Name="image2" Source="/Assets/Images/heart.png" Height="30" Width="30" Margin="0,20,0,20" PointerEntered="element_PointerEnteredFavorite" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <CompositeTransform/>
+                        </Image.RenderTransform>
+                        <Image.Projection>
+                            <PlaneProjection/>
+                        </Image.Projection>
+                    </Image>
+                    <Image x:Name="image3" Source="/Assets/Images/info.png" Height="30" Width="30" Margin="0,20,0,20" PointerEntered="element_PointerEnteredInfo" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <CompositeTransform/>
+                        </Image.RenderTransform>
+                        <Image.Projection>
+                            <PlaneProjection/>
+                        </Image.Projection>
+                    </Image>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="50" Background="Red"/>

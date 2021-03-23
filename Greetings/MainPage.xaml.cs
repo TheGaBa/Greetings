@@ -29,14 +29,24 @@ namespace Greetings
             this.InitializeComponent();
         }
 
-        private void element_PointerEntered(object sender, PointerRoutedEventArgs e)
+        private void element_PointerEnteredHome(object sender, PointerRoutedEventArgs e)
         {
-            ImagesStoryboard.Begin();
+            PointerEnterAnimationHome.Begin();
         }
 
-        private void element_PointerExited(object sender, PointerRoutedEventArgs e)
+        private void element_PointerEnteredLocation(object sender, PointerRoutedEventArgs e)
         {
-        
+            PointerEnterAnimationLocation.Begin();
+        }
+
+        private void element_PointerEnteredFavorite(object sender, PointerRoutedEventArgs e)
+        {
+            PointerEnterAnimationFavorite.Begin();
+        }
+
+        private void element_PointerEnteredInfo(object sender, PointerRoutedEventArgs e)
+        {
+            PointerEnterAnimationInfo.Begin();
         }
     }
 }
