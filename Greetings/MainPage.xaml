@@ -167,7 +167,7 @@
                                         <Color x:Key="SystemAccentColorLight1">#FF7415BD</Color>
                                         <Color x:Key="SystemAccentColorLight2">#FF6410AA</Color>
                                         <Color x:Key="SystemAccentColorLight3">#FF530A98</Color>
-                                     </ResourceDictionary>
+                                    </ResourceDictionary>
                                 </ResourceDictionary.MergedDictionaries>
                             </ResourceDictionary>
                             <ResourceDictionary x:Key="Light">
@@ -181,7 +181,7 @@
                                         <Color x:Key="SystemAccentColorDark1">#FF6A1DBD</Color>
                                         <Color x:Key="SystemAccentColorDark2">#FF5A16AB</Color>
                                         <Color x:Key="SystemAccentColorDark3">#FF490E98</Color>
-                                     </ResourceDictionary>
+                                    </ResourceDictionary>
                                 </ResourceDictionary.MergedDictionaries>
                             </ResourceDictionary>
                             <ResourceDictionary x:Key="HighContrast">
@@ -204,6 +204,22 @@
                     <TextBlock Text="urgent emails go here." />
                 </PivotItem>
             </Pivot>
+            <Grid Background="White" Height="60" Width="750" Margin="0,-30,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" CornerRadius="16,16,16,16" BorderBrush="#FF530A98" BorderThickness="3,3,3,3" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="1" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="1" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="140" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Background="Gray" Width="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" CornerRadius="3"/>
+                <StackPanel Background="Gray" Width="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" CornerRadius="3"/>
+
+                <Button Grid.Column="5" Height="50" Width="136" CornerRadius="0,12,12,0" Content="Find Options" HorizontalAlignment="Center" Background="#7C8F0AB6"/>
+
+            </Grid>
         </Grid>
     </Grid>
 </Page>
