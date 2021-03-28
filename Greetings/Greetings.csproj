@@ -130,8 +130,11 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\date_to.png" />
+    <Content Include="Assets\Images\date_from.png" />
     <Content Include="Assets\Images\heart.png" />
     <Content Include="Assets\Images\info.png" />
+    <Content Include="Assets\Images\location.png" />
     <Content Include="Assets\Images\log_cabin.png" />
     <Content Include="Assets\Images\ParallaxHeader.jpg" />
     <Content Include="Assets\Images\photo.jpg" />
@@ -153,6 +156,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyCalendarDatePickerStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TextBoxStyleWithoutBorder.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -214,6 +214,33 @@
                     <ColumnDefinition Width="140" />
                 </Grid.ColumnDefinitions>
 
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Width="30" Height="30" Source="/Assets/Images/location.png" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    <TextBox Style="{StaticResource TextBoxStyleWithoutBorder}" Grid.Column="1" PlaceholderText="Where are you going?" FontSize="14" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Width="162" BorderBrush="#66FFFFFF"/>
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Width="30" Height="30" Source="/Assets/Images/date_from.png" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    <CalendarDatePicker Style="{StaticResource MyCalendarDatePickerStyle}" Grid.Column="1" PlaceholderText="Check in" HorizontalAlignment="Center" Width="161" FontSize="14" />
+                </Grid>
+
+                <Grid Grid.Column="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Width="30" Height="30" Source="/Assets/Images/date_to.png" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    <CalendarDatePicker Style="{StaticResource MyCalendarDatePickerStyle}" Grid.Column="1" PlaceholderText="Check out" HorizontalAlignment="Center" Width="161" FontSize="14" />
+                </Grid>
+
                 <StackPanel Background="Gray" Width="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" CornerRadius="3"/>
                 <StackPanel Background="Gray" Width="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" CornerRadius="3"/>
 
