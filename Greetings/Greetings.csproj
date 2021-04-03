@@ -119,10 +119,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Assets\Lottie\Heart.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\VoucherModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\VouchersControl.xaml.cs">
+      <DependentUpon>VouchersControl.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -141,6 +146,10 @@
     <Content Include="Assets\Images\place_marker.png" />
     <Content Include="Assets\Images\settings.png" />
     <Content Include="Assets\Images\shutdown.png" />
+    <Content Include="Assets\Images\stupid_olen.jpg" />
+    <Content Include="Assets\Titles\Tokio.jpg" />
+    <Content Include="Assets\Titles\lapland.jpg" />
+    <Content Include="Assets\Titles\losangeles.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -167,11 +176,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\VouchersControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.12</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Lottie">
+      <Version>7.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.UI.Xaml">
+      <Version>2.6.0-prerelease.210315002</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Lottie\heart.json" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

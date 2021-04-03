@@ -6,8 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Custom="using:System.Numerics" x:Name="page"
     x:Class="Greetings.MainPage"
-    mc:Ignorable="d"
-    >
+    xmlns:controls="using:Greetings.Controls"
+    mc:Ignorable="d" >
     <Page.Resources>
         <Storyboard x:Name="PointerEnterAnimationHome">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
@@ -192,7 +192,7 @@
                     </ResourceDictionary>
                 </Pivot.Resources>
                 <PivotItem Header="New" >
-                    <!--<TextBlock Text="all emails go here." />-->
+                    <controls:VouchersControl VerticalAlignment="Top" />
                 </PivotItem>
                 <PivotItem Header="Popular">
                     <TextBlock Text="unread emails go here." />
@@ -248,5 +248,7 @@
 
             </Grid>
         </Grid>
+
     </Grid>
+
 </Page>
