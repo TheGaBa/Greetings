@@ -19,24 +19,24 @@ namespace Greetings.Controls
             myGridView.Items.Add(new VoucherModel()
             {
                 Name = "South Lake",
-                Price = 300,
-                Stars = 4.4,
+                Price = "300$",
+                Stars = "4.4",
                 Location = "South City",
                 ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/losangeles.jpg"))
             });
             myGridView.Items.Add(new VoucherModel()
             {
                 Name = "South Lake",
-                Price = 300,
-                Stars = 4.4,
+                Price = "300$",
+                Stars = "4.4",
                 Location = "South City",
                 ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/Tokio.jpg"))
             });
             myGridView.Items.Add(new VoucherModel()
             {
                 Name = "South Lake",
-                Price = 300,
-                Stars = 4.4,
+                Price = "300$",
+                Stars = "4.4",
                 Location = "South City",
                 ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/lapland.jpg"))
             });

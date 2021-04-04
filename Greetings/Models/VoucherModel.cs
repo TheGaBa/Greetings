@@ -6,9 +6,9 @@ namespace Greetings.Models
     {
         internal string Name { get; set; }
 
-        internal double Price { get; set; }
+        internal string Price { get; set; }
 
-        internal double Stars { get; set; }
+        internal string Stars { get; set; }
 
         internal bool Like { get; set; }
 

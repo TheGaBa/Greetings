@@ -195,13 +195,13 @@
                     <controls:VouchersControl VerticalAlignment="Top" />
                 </PivotItem>
                 <PivotItem Header="Popular">
-                    <TextBlock Text="unread emails go here." />
+                    <controls:VouchersControl VerticalAlignment="Top" />
                 </PivotItem>
                 <PivotItem Header="Recommendations">
-                    <TextBlock Text="flagged emails go here." />
+                    <controls:VouchersControl VerticalAlignment="Top" />
                 </PivotItem>
                 <PivotItem Header="Best Price">
-                    <TextBlock Text="urgent emails go here." />
+                    <controls:VouchersControl VerticalAlignment="Top" />
                 </PivotItem>
             </Pivot>
             <Grid Background="White" Height="60" Width="750" Margin="0,-30,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" CornerRadius="16,16,16,16" BorderBrush="#FF530A98" BorderThickness="3,3,3,3" >
