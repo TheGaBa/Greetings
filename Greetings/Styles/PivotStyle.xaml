@@ -1,13 +1,16 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
     <ControlTemplate x:Name="ScrollViewerScrollBarlessTemplate" TargetType="ScrollViewer">
         <Grid Background="{TemplateBinding Background}">
             <ScrollContentPresenter x:Name="ScrollContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}"/>
         </Grid>
     </ControlTemplate>
-    <Style x:Key="PivotStyle" TargetType="Pivot">
+    <ControlTemplate x:Key="PivotTemplate1" TargetType="Pivot">
+        <Grid/>
+    </ControlTemplate>
+    <Style x:Key="MyPivotStyle" TargetType="Pivot">
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Background" Value="{ThemeResource PivotBackground}"/>

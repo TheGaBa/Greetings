@@ -21,7 +21,7 @@
             </Border.Background>
         </Border>
 
-        <Grid RequestedTheme="Light" Height="800" Width="700" CornerRadius="35" Background="White">
+        <Grid RequestedTheme="Light" Height="500" Width="700" CornerRadius="35" Background="White">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -30,24 +30,41 @@
             <muxc:AnimatedVisualPlayer AutoPlay="True" HorizontalAlignment="Center" VerticalAlignment="Center" Height="350" Width="350" >
                 <lottie:Travel />
             </muxc:AnimatedVisualPlayer>
+
             <Grid Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="500" Width="310">
                 <TextBlock Text="Sing Up To Greetings" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" FontSize="35" FontWeight="Bold" FontFamily="Agency FB" />
-                <!--<Pivot Style="{StaticResource PivotStyle}" VerticalAlignment="Top" HorizontalAlignment="Center" Width="300" Height="320" Margin="0,65,0,0">-->
-                <!--<Pivot VerticalAlignment="Top" HorizontalAlignment="Center" Width="300" Height="320" Margin="0,65,0,0">
-                    <PivotItem Header="Login" >
-                        <StackPanel>
-                            <TextBox Header="Enter your name:" PlaceholderText="Name" Width="240" HorizontalAlignment="Center" Margin="0,15,0,15"/>
-                            <TextBox Header="Enter your name:" PlaceholderText="Name" Width="240" HorizontalAlignment="Center" Margin="0,0,0,15"/>
-                            <Button Content="Login" Width="240" HorizontalAlignment="Center"/>
-                        </StackPanel>
-                    </PivotItem>
-                    <PivotItem Header="Register" />
-                </Pivot>-->
+                <!--<Pivot Style="{StaticResource MyPivotStyle}" VerticalAlignment="Top" HorizontalAlignment="Center" Width="300" Height="320" Margin="0,65,0,0">-->
                 <Pivot VerticalAlignment="Top" HorizontalAlignment="Center" Width="300" Height="320" Margin="0,65,0,0">
                     <PivotItem Header="Login" >
-                        <TextBox HorizontalAlignment="Left" Margin="50,145,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                        <StackPanel >
+                            <StackPanel HorizontalAlignment="Center" Margin="0, 15, 0, 15">
+                                <TextBlock Text="Username" FontSize="20" FontFamily="Agency FB"/>
+                                <TextBox Width="240" />
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" Margin="0, 0, 0, 15">
+                                <TextBlock Text="Password" FontSize="20" FontFamily="Agency FB"/>
+                                <TextBox Width="240" />
+                            </StackPanel>
+                            <Button Width="240" Height="40" HorizontalAlignment="Center" Content="Login"/>
+                        </StackPanel>
                     </PivotItem>
-                    <PivotItem Header="Register" ></PivotItem>
+                    <PivotItem Header="Register" >
+                        <StackPanel >
+                            <StackPanel HorizontalAlignment="Center" Margin="0, 15, 0, 15">
+                                <TextBlock Text="Username" FontSize="20" FontFamily="Agency FB"/>
+                                <TextBox Width="240" />
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" Margin="0, 0, 0, 15">
+                                <TextBlock Text="Password" FontSize="20" FontFamily="Agency FB"/>
+                                <TextBox Width="240" />
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" Margin="0, 0, 0, 15">
+                                <TextBlock Text="Repeat Password" FontSize="20" FontFamily="Agency FB"/>
+                                <TextBox Width="240" />
+                            </StackPanel>
+                            <Button Width="240" Height="40" HorizontalAlignment="Center" Content="Register"/>
+                        </StackPanel>
+                    </PivotItem>
                 </Pivot>
             </Grid>
         </Grid>
