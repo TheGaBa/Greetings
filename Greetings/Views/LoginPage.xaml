@@ -6,9 +6,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:lottie="using:AnimatedVisuals"
-    xmlns:brushes="using:Microsoft.Toolkit.Uwp.UI.Media"
+    xmlns:brushes="using:Microsoft.Toolkit.Uwp.UI.Media" 
+    xmlns:viewModels="using:Greetings.ViewModels"
     mc:Ignorable="d">
-
+    
+    <Page.DataContext>
+        <viewModels:LoginViewModel x:Name="ViewModel"/>
+    </Page.DataContext>
+    
     <Grid RequestedTheme="Dark" Background="{ThemeResource SystemControlChromeHighAcrylicWindowMediumBrush}">
 
         <Border >
@@ -39,30 +44,35 @@
                         <StackPanel >
                             <StackPanel HorizontalAlignment="Center" Margin="0, 15, 0, 15">
                                 <TextBlock Text="Username" FontSize="20" FontFamily="Agency FB"/>
-                                <TextBox Width="240" />
+                                <TextBox Width="240" Text="{x:Bind ViewModel.Login, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel HorizontalAlignment="Center" Margin="0, 0, 0, 15">
                                 <TextBlock Text="Password" FontSize="20" FontFamily="Agency FB"/>
-                                <TextBox Width="240" />
+                                <PasswordBox Width="240" Password="{x:Bind ViewModel.Password, Mode=TwoWay}" />
                             </StackPanel>
-                            <Button Width="240" Height="40" HorizontalAlignment="Center" Content="Login"/>
+                            <Button 
+                                Width="240" 
+                                Height="40" 
+                                HorizontalAlignment="Center" 
+                                Content="Login"
+                                Command="{x:Bind ViewModel.LoginCommand}"/>
                         </StackPanel>
                     </PivotItem>
                     <PivotItem Header="Register" >
                         <StackPanel >
                             <StackPanel HorizontalAlignment="Center" Margin="0, 15, 0, 15">
                                 <TextBlock Text="Username" FontSize="20" FontFamily="Agency FB"/>
-                                <TextBox Width="240" />
+                                <TextBox Width="240" Text="{x:Bind ViewModel.Login, Mode=TwoWay}"/>
                             </StackPanel>
                             <StackPanel HorizontalAlignment="Center" Margin="0, 0, 0, 15">
                                 <TextBlock Text="Password" FontSize="20" FontFamily="Agency FB"/>
-                                <TextBox Width="240" />
+                                <PasswordBox Width="240" Password="{x:Bind ViewModel.Password, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel HorizontalAlignment="Center" Margin="0, 0, 0, 15">
                                 <TextBlock Text="Repeat Password" FontSize="20" FontFamily="Agency FB"/>
-                                <TextBox Width="240" />
+                                <PasswordBox Width="240" Password="{x:Bind ViewModel.RepeatPassword, Mode=TwoWay}" />
                             </StackPanel>
-                            <Button Width="240" Height="40" HorizontalAlignment="Center" Content="Register"/>
+                            <Button Command="{x:Bind ViewModel.RegisterCommand}" Width="240" Height="40" HorizontalAlignment="Center" Content="Register"/>
                         </StackPanel>
                     </PivotItem>
                 </Pivot>

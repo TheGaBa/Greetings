@@ -8,7 +8,7 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="7966eee8-a9fa-4424-8c9e-0c06a024494f"
+    Name="Greetings"
     Publisher="CN=Vladyslav"
     Version="1.0.0.0" />
 
