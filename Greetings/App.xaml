@@ -12,8 +12,11 @@
                 <ResourceDictionary Source="/Styles/TextBoxStyleWithoutBorder.xaml"/>
                 <ResourceDictionary Source="/Styles/MyCalendarDatePickerStyle.xaml"/>
                 <ResourceDictionary Source="/Styles/PivotColors.xaml"/>
-                <!--<ResourceDictionary Source="/Styles/PivotStyle.xaml"/>-->
-                <!-- Other app resources here -->
+
+
+                <!--Закомментировать при дебаге-->
+                <ResourceDictionary Source="/Styles/PivotStyle.xaml"/>
+
             </controls:XamlControlsResources.MergedDictionaries>
         </controls:XamlControlsResources>
     </Application.Resources>

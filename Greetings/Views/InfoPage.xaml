@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="Greetings.Views.InfoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:lottie="using:AnimatedVisuals"
+    xmlns:brushes="using:Microsoft.Toolkit.Uwp.UI.Media"
+    mc:Ignorable="d">
+
+    <!--<Grid>
+        <TextBlock Text="Программу разработали слудующие fucking slaves:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>-->
+
+    <Grid RequestedTheme="Dark" Background="{ThemeResource SystemControlChromeHighAcrylicWindowMediumBrush}">
+
+        <Border >
+            <Border.Background>
+                <brushes:AcrylicBrush BackgroundSource="Backdrop"
+                                TintColor="#FF6010BF"
+                                TintOpacity="0.2"
+                                BlurAmount="12"
+                                IsEnabled="True"/>
+            </Border.Background>
+        </Border>
+
+        <Grid RequestedTheme="Light" Height="500" Width="700" CornerRadius="35" Background="White">
+            <TextBlock Text="Процесс создания программы" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="30" FontSize="35" FontWeight="Bold" FontFamily="Agency FB" />
+            <MediaPlayerElement x:Name="mediaPlayerControl" Source="ms-appx:///Assets/Videos/attack.mp4" Height="300" AutoPlay="True" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <RichTextBlock TextAlignment="Center" FontSize="20" FontFamily="Agency FB" VerticalAlignment="Bottom" Margin="20" Height="50">
+                <Paragraph>Разработчики: Папазов Дмитрий</Paragraph>
+                <Paragraph>Жук Евгений</Paragraph>
+            </RichTextBlock>
+        </Grid>
+    </Grid>
+</Page>

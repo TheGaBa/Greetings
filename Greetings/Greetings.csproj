@@ -121,6 +121,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Assets\Lottie\Code.cs" />
     <Compile Include="Assets\Lottie\Heart.cs" />
     <Compile Include="Assets\Lottie\Travel.cs" />
     <Compile Include="Helpers\Json.cs" />
@@ -136,6 +137,10 @@
     </Compile>
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\InfoPage.xaml.cs">
+      <DependentUpon>InfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -163,6 +168,7 @@
     <Content Include="Assets\Titles\Tokio.jpg" />
     <Content Include="Assets\Titles\lapland.jpg" />
     <Content Include="Assets\Titles\losangeles.jpg" />
+    <Content Include="Assets\Videos\attack.mp4" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -201,6 +207,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\InfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,6 +221,9 @@
       <Version>6.2.12</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit.Mvvm">
+      <Version>7.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Behaviors">
       <Version>7.0.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Lottie">
@@ -224,6 +237,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Lottie\Code.json" />
     <None Include="Assets\Lottie\heart.json" />
     <None Include="Assets\Lottie\travel.json" />
   </ItemGroup>

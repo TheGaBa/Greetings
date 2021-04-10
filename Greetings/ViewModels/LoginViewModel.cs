@@ -49,15 +49,18 @@ namespace Greetings.ViewModels
 
         private async void LoginMethod()
         {
-            if (String.IsNullOrEmpty(_login)) return;
-            if (String.IsNullOrEmpty(_password)) return;
+            //if (String.IsNullOrEmpty(_login)) return;
+            //if (String.IsNullOrEmpty(_password)) return;
 
-            User userToLogin = await ApplicationData.Current.LocalFolder.ReadAsync<User>("UsersRegister");
-            if (userToLogin.Login == _login
-             && userToLogin.Password == _password)
-            {
-                NavigationService.Navigate(typeof(MainPage));
-            }
+            //User userToLogin = await ApplicationData.Current.LocalFolder.ReadAsync<User>("UsersRegister");
+            //if (userToLogin.Login == _login
+            // && userToLogin.Password == _password)
+            //{
+            //    NavigationService.Navigate(typeof(MainPage));
+            //}
+
+            NavigationService.Navigate(typeof(MainPage));
+
         }
 
         private async void RegisterMethod()
