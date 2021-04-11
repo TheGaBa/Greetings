@@ -129,15 +129,20 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\VoucherModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controls\VouchersControl.xaml.cs">
       <DependentUpon>VouchersControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\ErrorHandler.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\HelpPage.xaml.cs">
+      <DependentUpon>HelpPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\InfoPage.xaml.cs">
       <DependentUpon>InfoPage.xaml</DependentUpon>
     </Compile>
@@ -151,9 +156,11 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\cancel.png" />
     <Content Include="Assets\Images\date_to.png" />
     <Content Include="Assets\Images\date_from.png" />
     <Content Include="Assets\Images\heart.png" />
+    <Content Include="Assets\Images\help.png" />
     <Content Include="Assets\Images\info.png" />
     <Content Include="Assets\Images\location.png" />
     <Content Include="Assets\Images\log_cabin.png" />
@@ -204,6 +211,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\VouchersControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HelpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

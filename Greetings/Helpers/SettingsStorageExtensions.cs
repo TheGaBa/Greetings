@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using Windows.Storage;
 using Windows.Storage.Streams;
 
@@ -127,6 +128,32 @@ namespace Greetings.Helpers
             var storageFile = await folder.CreateFileAsync(fileName, option);
             await FileIO.WriteBytesAsync(storageFile, content);
             return storageFile;
+        }
+
+        /// <summary>
+        /// Serialize Error object <paramref name="content"/> and save it as Xml into: 
+        /// <para>Folder: <see cref="StorageFolder"/></para>
+        /// <para>File name: <paramref name="name"/></para>
+        /// </summary>
+        /// <typeparam name="T">Type of object ot serialize</typeparam>
+        /// <param name="folder">Current app folder</param>
+        /// <param name="name">File name</param>
+        /// <param name="content">Object to serialize</param>
+        /// <returns></returns>
+        public static async Task SaveErrorAsync<T>(this StorageFolder folder, T content)
+        {
+            if (content == null)
+            {
+                throw new ArgumentNullException(nameof(content));
+            }      
+
+            var file = await folder.CreateFileAsync("errors.xml", CreationCollisionOption.OpenIfExists);
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+
+            using (FileStream fs = new FileStream(file.Path, FileMode.OpenOrCreate))
+            {
+                serializer.Serialize(fs, content);
+            }
         }
 
         /// <summary>

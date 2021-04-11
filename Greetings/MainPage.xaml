@@ -60,6 +60,15 @@
                 <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+        <Storyboard x:Name="PointerEnterAnimationHelp">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imageHelp" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2000000" Value="9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.6000000" Value="-9"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
     </Page.Resources>
 
     <Page.Background>
@@ -121,6 +130,19 @@
                         <interactivity:Interaction.Behaviors>
                             <core:EventTriggerBehavior EventName="PointerPressed">
                                 <core:InvokeCommandAction Command="{x:Bind ViewModel.ShowInfoCommand}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                        <Image.RenderTransform>
+                            <CompositeTransform/>
+                        </Image.RenderTransform>
+                        <Image.Projection>
+                            <PlaneProjection/>
+                        </Image.Projection>
+                    </Image>
+                    <Image x:Name="imageHelp" Source="/Assets/Images/help.png" Height="30" Width="30" Margin="0,20,0,20" PointerEntered="element_PointerEnteredHelp" RenderTransformOrigin="0.5,0.5">
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{x:Bind ViewModel.ShowHelpCommand}" />
                             </core:EventTriggerBehavior>
                         </interactivity:Interaction.Behaviors>
                         <Image.RenderTransform>

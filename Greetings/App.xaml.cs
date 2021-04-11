@@ -23,17 +23,13 @@ namespace Greetings
             this.InitializeComponent();
             this.Suspending += OnSuspending;
             this.UnhandledException += OnAppUnhandledException;
-
         }
 
         /// <summary>
         /// Log and handle the exception as apptopriate to your scenario.
         /// <para>For more information see: <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.unhandledexception">this article</a></para>
         /// </summary>
-        private void OnAppUnhandledException(object sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e)
-        {
-            // TODO: Add handlers
-        }
+        private void OnAppUnhandledException(object sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e) => ErrorHandler.Log(e.Message);
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
