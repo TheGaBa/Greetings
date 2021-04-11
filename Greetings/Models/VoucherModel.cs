@@ -2,7 +2,7 @@
 
 namespace Greetings.Models
 {
-    internal class VoucherModel
+    public class VoucherModel
     {
         internal string Name { get; set; }
 

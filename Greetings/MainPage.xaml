@@ -187,16 +187,16 @@
         <Grid  Grid.Column="1" Grid.Row="1" >
             <Pivot Margin="40" >
                 <PivotItem Header="New" >
-                    <controls:VouchersControl VerticalAlignment="Top" />
+                    <controls:VouchersControl x:Name="newItems" VerticalAlignment="Top" />
                 </PivotItem>
                 <PivotItem Header="Popular">
-                    <controls:VouchersControl VerticalAlignment="Top" />
+                    <controls:VouchersControl x:Name="popularItems" VerticalAlignment="Top" />
                 </PivotItem>
                 <PivotItem Header="Recommendations">
-                    <controls:VouchersControl VerticalAlignment="Top" />
+                    <controls:VouchersControl x:Name="recommendationsItems" VerticalAlignment="Top" />
                 </PivotItem>
                 <PivotItem Header="Best Price">
-                    <controls:VouchersControl VerticalAlignment="Top" />
+                    <controls:VouchersControl x:Name="bestPriceItems" VerticalAlignment="Top" />
                 </PivotItem>
             </Pivot>
             <Grid Background="White" Height="60" Width="750" Margin="0,-30,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" CornerRadius="16,16,16,16" BorderBrush="#FF530A98" BorderThickness="3,3,3,3" >
