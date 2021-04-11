@@ -17,7 +17,7 @@ namespace Greetings.Views
         public FavouritesPage()
         {
             this.InitializeComponent();
-            favouritesItems.Cards = Favorites;
+            favouritesItems.ItemsSource = Favorites;
         }
     }
 }

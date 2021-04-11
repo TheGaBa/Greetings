@@ -52,7 +52,7 @@
               ScrollViewer.VerticalScrollMode="Disabled" 
               ItemTemplate="{StaticResource ImageOverlayTemplate}" 
               IsTabStop="False"
-              ItemsSource="{x:Bind Cards}">
+              ItemsSource="{x:Bind ItemsSource}">
 
         <GridView.ItemContainerStyle>
             <Style TargetType="GridViewItem">

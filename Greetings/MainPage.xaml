@@ -7,7 +7,9 @@
     xmlns:Custom="using:System.Numerics" x:Name="page"
     x:Class="Greetings.MainPage"
     xmlns:controls="using:Greetings.Controls"
-    xmlns:viewModels="using:Greetings.ViewModels" xmlns:interactivity="using:Microsoft.Xaml.Interactivity" xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:viewModels="using:Greetings.ViewModels" 
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity" 
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d" >
 
     <Page.DataContext>
@@ -187,16 +189,16 @@
         <Grid  Grid.Column="1" Grid.Row="1" >
             <Pivot Margin="40" >
                 <PivotItem Header="New" >
-                    <controls:VouchersControl x:Name="newItems" VerticalAlignment="Top" />
+                    <controls:VouchersControl ItemsSource="{x:Bind ViewModel.Newest}" VerticalAlignment="Top" />
                 </PivotItem>
                 <PivotItem Header="Popular">
-                    <controls:VouchersControl x:Name="popularItems" VerticalAlignment="Top" />
+                    <controls:VouchersControl ItemsSource="{x:Bind ViewModel.Popular}" VerticalAlignment="Top" />
                 </PivotItem>
                 <PivotItem Header="Recommendations">
-                    <controls:VouchersControl x:Name="recommendationsItems" VerticalAlignment="Top" />
+                    <controls:VouchersControl ItemsSource="{x:Bind ViewModel.Recommendations}" VerticalAlignment="Top" />
                 </PivotItem>
                 <PivotItem Header="Best Price">
-                    <controls:VouchersControl x:Name="bestPriceItems" VerticalAlignment="Top" />
+                    <controls:VouchersControl ItemsSource="{x:Bind ViewModel.BestPrices}" VerticalAlignment="Top" />
                 </PivotItem>
             </Pivot>
             <Grid Background="White" Height="60" Width="750" Margin="0,-30,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" CornerRadius="16,16,16,16" BorderBrush="#FF530A98" BorderThickness="3,3,3,3" >

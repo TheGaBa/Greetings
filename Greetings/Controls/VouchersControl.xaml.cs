@@ -12,17 +12,19 @@ namespace Greetings.Controls
 {
     public sealed partial class VouchersControl : UserControl
     {
+        public static readonly DependencyProperty ItemsSourceProperty =
+           DependencyProperty.Register(
+               "ItemsSource",
+               typeof(ObservableCollection<VoucherModel>),
+               typeof(VouchersControl),
+               new PropertyMetadata(null)
+           );
 
-        public ObservableCollection<VoucherModel> Cards
+        public ObservableCollection<VoucherModel> ItemsSource
         {
-            get => (ObservableCollection<VoucherModel>)GetValue(CardsProperty);
-            set => SetValue(CardsProperty, value);
+            get { return (ObservableCollection<VoucherModel>)GetValue(ItemsSourceProperty); }
+            set { SetValue(ItemsSourceProperty, value); }
         }
-
-        // Using a DependencyProperty as the backing store for Cards.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty CardsProperty =
-            DependencyProperty.Register("Cards", typeof(ObservableCollection<VoucherModel>), typeof(VouchersControl), new PropertyMetadata(0));
-
 
         public VouchersControl()
         {
