@@ -31,7 +31,7 @@ namespace Greetings.Models
 
         internal ICommand ChangeSelectionCommand { get; set; }
 
-        private async void ChangeSelection(AnimatedVisualPlayer player)
+        private void ChangeSelection(AnimatedVisualPlayer player)
         {
             var parent = (player.Parent as Control).Parent;
             var textBlock = VisualManager.FindControl<TextBlock>(parent as UIElement, typeof(TextBlock), "tourName");
@@ -45,11 +45,10 @@ namespace Greetings.Models
             }
             else
             {
-                await player.PlayAsync(0, 1, false);
+               _= player.PlayAsync(0, 1, false);
                 Like = true;
                 (Application.Current as App).MainViewModel.AddToFavourite(nameOfTour);
             }
-
         }
     }
 }

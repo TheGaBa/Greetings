@@ -14,7 +14,7 @@ namespace Greetings.Views
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class FavouritesPage : Page
-    {       
+    {
         public FavouritesPage()
         {
             this.InitializeComponent();
@@ -28,7 +28,7 @@ namespace Greetings.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             ViewModel.Favourites = e.Parameter as ObservableCollection<VoucherModel>;
-
+    
             base.OnNavigatedTo(e);
         }
     }

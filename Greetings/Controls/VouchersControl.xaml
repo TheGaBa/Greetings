@@ -28,8 +28,8 @@
                     <TextBlock Text="{x:Bind Location}" FontSize="18" Foreground="White" FontWeight="Bold"/>
                 </StackPanel>
 
-                <ToggleButton IsChecked="{x:Bind Like, Mode=TwoWay}">
-                    <muxc:AnimatedVisualPlayer x:Name="visualPlayer" AutoPlay="False" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="35" Height="50" Width="50">
+                <ToggleButton Style="{StaticResource MyToggleButtonStyle}" IsChecked="{x:Bind Like, Mode=TwoWay}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="35" Height="50" Width="50" Padding="0" DataContextChanged="ToggleButton_DataContextChanged">
+                    <muxc:AnimatedVisualPlayer x:Name="visualPlayer" AutoPlay="False" Height="50" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center">
                         <interaction:Interaction.Behaviors>
                             <core:EventTriggerBehavior EventName="PointerPressed">
                                 <core:InvokeCommandAction
@@ -51,7 +51,7 @@
               ScrollViewer.VerticalScrollMode="Disabled" 
               ItemTemplate="{StaticResource ImageOverlayTemplate}" 
               IsTabStop="False"
-              ItemsSource="{x:Bind ItemsSource}">
+              ItemsSource="{x:Bind ItemsSource}" >
 
         <GridView.ItemContainerStyle>
             <Style TargetType="GridViewItem">
