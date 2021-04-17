@@ -17,7 +17,7 @@
                 <Grid.Background>
                     <ImageBrush ImageSource="{x:Bind ImageSource}"/>
                 </Grid.Background>
-                <TextBlock Text="{x:Bind Name}" HorizontalAlignment="Left"  FontSize="26" VerticalAlignment="Top" Margin="35" FontWeight="Bold" Foreground="White" />
+                <TextBlock x:Name="tourName" Text="{x:Bind Name}" HorizontalAlignment="Left"  FontSize="26" VerticalAlignment="Top" Margin="35" FontWeight="Bold" Foreground="White" />
                 <TextBlock Text="{x:Bind Price}" HorizontalAlignment="Left"  FontSize="24" Foreground="White" VerticalAlignment="Top" Margin="35, 70" FontWeight="Bold" />
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="top" Margin="35,105" >
                     <Image Source="/Assets/Images/star.png" Height="22" Width="22" Margin="0,0,5,0"/>
@@ -28,7 +28,7 @@
                     <TextBlock Text="{x:Bind Location}" FontSize="18" Foreground="White" FontWeight="Bold"/>
                 </StackPanel>
 
-                <muxc:AnimatedVisualPlayer AutoPlay="False" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="35" Height="50" Width="50" PointerPressed="AnimatedVisualPlayer_PointerPressed" >
+                <muxc:AnimatedVisualPlayer AutoPlay="False" PointerPressed="AnimatedVisualPlayer_PointerPressed" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="35" Height="50" Width="50">
                     <lottie:Heart />
                 </muxc:AnimatedVisualPlayer>
             </Grid>

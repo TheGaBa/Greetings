@@ -6,16 +6,30 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:myControls="using:Greetings.Controls"
-    xmlns:viewModels="using:Greetings.ViewModels"
+    xmlns:viewModels="using:Greetings.ViewModels" 
+    xmlns:brushes="using:Microsoft.Toolkit.Uwp.UI.Media"
     mc:Ignorable="d">
 
     <Page.DataContext>
         <viewModels:FavoritesViewModel x:Name="ViewModel"/>
     </Page.DataContext>
-    <Grid>
-        <TextBlock Text="Favorites" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" FontSize="35" FontWeight="Bold" FontFamily="Agency FB" />
-        <Image PointerPressed="Image_PointerPressed" Height="30" Width="30" Margin="30" HorizontalAlignment="Right" VerticalAlignment="Top" Source="/Assets/Images/cancel.png"/>
 
-        <myControls:VouchersControl ItemsSource="{x:Bind ViewModel.Favourites}" VerticalAlignment="Top" Margin="80"/>
+    <Grid RequestedTheme="Dark" Background="{ThemeResource SystemControlChromeHighAcrylicWindowMediumBrush}">
+
+        <Border >
+            <Border.Background>
+                <brushes:AcrylicBrush BackgroundSource="Backdrop"
+                                TintColor="#FF6010BF"
+                                TintOpacity="0.2"
+                                BlurAmount="12"
+                                IsEnabled="True"/>
+            </Border.Background>
+        </Border>
+
+        <Grid RequestedTheme="Light" Height="600" CornerRadius="35" Background="White" VerticalAlignment="Center" Margin="60">
+             <Image PointerPressed="Image_PointerPressed" Height="30" Width="30" Margin="30" HorizontalAlignment="Right" VerticalAlignment="Top" Source="/Assets/Images/cancel.png"/>
+            <TextBlock Text="Favourites" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="30" FontSize="35" FontWeight="Bold" FontFamily="Agency FB" />
+            <myControls:VouchersControl ItemsSource="{x:Bind ViewModel.Favourites}" VerticalAlignment="Top" Margin="80"/>
+        </Grid>
     </Grid>
 </Page>

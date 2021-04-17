@@ -160,6 +160,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Titles\greenland.png" />
     <Content Include="Assets\Images\cancel.png" />
     <Content Include="Assets\Images\date_to.png" />
     <Content Include="Assets\Images\date_from.png" />
@@ -176,9 +177,17 @@
     <Content Include="Assets\Images\shutdown.png" />
     <Content Include="Assets\Images\star.png" />
     <Content Include="Assets\Images\stupid_olen.jpg" />
+    <Content Include="Assets\Titles\India.jpg" />
+    <Content Include="Assets\Titles\japan.jpg" />
+    <Content Include="Assets\Titles\NewYork.png" />
+    <Content Include="Assets\Titles\NewZeland.png" />
+    <Content Include="Assets\Titles\norvegia.jpg" />
+    <Content Include="Assets\Titles\Russia.png" />
+    <Content Include="Assets\Titles\Russia1.png" />
     <Content Include="Assets\Titles\Tokio.jpg" />
     <Content Include="Assets\Titles\lapland.jpg" />
     <Content Include="Assets\Titles\losangeles.jpg" />
+    <Content Include="Assets\Titles\Ukraine.jpg" />
     <Content Include="Assets\Videos\attack.mp4" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

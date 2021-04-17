@@ -5,7 +5,9 @@ using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace Greetings.ViewModels
@@ -17,32 +19,111 @@ namespace Greetings.ViewModels
         {
             new VoucherModel()
             {
-                Name = "South Lake",
+                Name = "USA",
                 Price = "300$",
                 Stars = "4.4",
-                Location = "South City",
+                Location = "losangeles",
                 ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/losangeles.jpg"))
             },
             new VoucherModel()
             {
-                Name = "South Lake",
-                Price = "300$",
-                Stars = "4.4",
-                Location = "South City",
+                Name = "Tokyo",
+                Price = "390$",
+                Stars = "4.1",
+                Location = "Tokyo",
                 ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/Tokio.jpg"))
             },
             new VoucherModel()
             {
-                Name = "South Lake",
-                Price = "300$",
-                Stars = "4.4",
-                Location = "South City",
+                Name = "Lapland",
+                Price = "360$",
+                Stars = "4.7",
+                Location = "Tornio",
                 ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/lapland.jpg"))
             }
         };
-        public ObservableCollection<VoucherModel> Popular = new ObservableCollection<VoucherModel>();
-        public ObservableCollection<VoucherModel> Recommendations = new ObservableCollection<VoucherModel>();
-        public ObservableCollection<VoucherModel> BestPrices = new ObservableCollection<VoucherModel>();
+
+        public ObservableCollection<VoucherModel> Popular = new ObservableCollection<VoucherModel>()
+        {
+               new VoucherModel()
+        {
+            Name = "GreenLand",
+                Price = "240$",
+                Stars = "4.7",
+                Location = "Nuk",
+                ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/greenland.png"))
+            },
+            new VoucherModel()
+        {
+            Name = "Japan",
+                Price = "460$",
+                Stars = "4.3",
+                Location = "Kioto",
+                ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/japan.jpg"))
+            },
+            new VoucherModel()
+        {
+            Name = "Russia",
+                Price = "210$",
+                Stars = "4.8",
+                Location = "Gelendzhik",
+                ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/Russia.png"))
+            }
+        };
+        public ObservableCollection<VoucherModel> Recommendations = new ObservableCollection<VoucherModel>()
+        {
+                   new VoucherModel()
+        {
+            Name = "India",
+                Price = "340$",
+                Stars = "4.5",
+                Location = "Sri Lanka",
+                ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/India.jpg"))
+            },
+            new VoucherModel()
+        {
+            Name = "USA",
+                Price = "420$",
+                Stars = "4.5",
+                Location = "NewYork",
+                ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/NewYork.png"))
+            },
+            new VoucherModel()
+        {
+            Name = "NewZeland",
+                Price = "250$",
+                Stars = "4.8",
+                Location = "Nelson",
+                ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/NewZeland.png"))
+            }
+        };
+        public ObservableCollection<VoucherModel> BestPrices = new ObservableCollection<VoucherModel>()
+{
+                   new VoucherModel()
+        {
+            Name = "Norvegia",
+                Price = "200$",
+                Stars = "4.2",
+                Location = "Oslo",
+                ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/norvegia.jpg"))
+            },
+            new VoucherModel()
+        {
+            Name = "Russia",
+                Price = "190$",
+                Stars = "4.4",
+                Location = "Yakutia",
+                ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/Russia1.png"))
+            },
+            new VoucherModel()
+        {
+            Name = "USA",
+                Price = "220$",
+                Stars = "4.1",
+                Location = "NewYork",
+                ImageSource = new BitmapImage(new Uri("ms-appx:///Assets/Titles/NewYork.png"))
+            }
+        };
         public ObservableCollection<VoucherModel> Favourites = new ObservableCollection<VoucherModel>();
 
         public MainViewModel()
@@ -51,13 +132,26 @@ namespace Greetings.ViewModels
             ShowInfoCommand = new RelayCommand(ShowInfo);
             ShowHelpCommand = new RelayCommand(ShowHelp);
             ShowFavouritesCommand = new RelayCommand(ShowFavourites);
-        }
 
-        
+            (Application.Current as App).MainViewModel = this;
+        }
+                
         public ICommand ShowInfoCommand { get; }
         public ICommand ShowHelpCommand { get; }
         public ICommand ShowFavouritesCommand { get; set; }
         public ICommand ExitCommand { get; }
+       
+        internal void AddToFavourite(string nameOfTour)
+        {
+            VoucherModel selected = Popular.FirstOrDefault(item => item.Name == nameOfTour);
+            if (selected == null) selected = Recommendations.FirstOrDefault(item => item.Name == nameOfTour);
+            if (selected == null) selected = BestPrices.FirstOrDefault(item => item.Name == nameOfTour);
+            if (selected == null) selected = Newest.FirstOrDefault(item => item.Name == nameOfTour);
+
+            if (Favourites.Contains(selected)) return;
+
+            Favourites.Add(selected);
+        }
 
         private void Exit() => NavigationService.Navigate(typeof(LoginPage));
         private void ShowInfo() => NavigationService.Navigate(typeof(InfoPage));

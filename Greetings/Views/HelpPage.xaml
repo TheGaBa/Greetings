@@ -22,8 +22,10 @@
 
         <Grid RequestedTheme="Light" Height="500" Width="700" CornerRadius="35" Background="White">
             <Image PointerPressed="Image_PointerPressed" Height="30" Width="30" Margin="30" HorizontalAlignment="Right" VerticalAlignment="Top" Source="/Assets/Images/cancel.png"/>
-            <TextBlock Text="..." HorizontalAlignment="Center" VerticalAlignment="Top" Margin="30" FontSize="35" FontWeight="Bold" FontFamily="Agency FB" />
-            <TextBlock Text="..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" FontFamily="Agency FB" />
+            <TextBlock Text="Cправка" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0" FontSize="35" FontWeight="Bold" FontFamily="Agency FB" Width="173" />
+            <TextBlock Text="Приложение используется для заказа и просмотра отелей для путешествия." TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" FontFamily="Agency FB" Margin="0,102,0,0" />
+            <TextBlock Text="Вы можете заказать себе бронь на отель в течении какого либо времени с помощью календаря в главном меню и выбора самих отелей." TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" FontFamily="Agency FB" Margin="10,190,0,0" />
+            <TextBlock Text="Просматривайте наилучший рейтинг или цены на отели." TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" FontWeight="Bold" FontFamily="Agency FB" Margin="10,320,0,0" />
         </Grid>
     </Grid>
 </Page>
