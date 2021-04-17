@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     xmlns:models="using:Greetings.Models" 
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    xmlns:lottie="using:AnimatedVisuals"
+    xmlns:lottie="using:AnimatedVisuals" xmlns:interaction="using:Microsoft.Xaml.Interactivity" xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     Height="450">
 
     <UserControl.Resources>
@@ -28,9 +28,18 @@
                     <TextBlock Text="{x:Bind Location}" FontSize="18" Foreground="White" FontWeight="Bold"/>
                 </StackPanel>
 
-                <muxc:AnimatedVisualPlayer AutoPlay="False" PointerPressed="AnimatedVisualPlayer_PointerPressed" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="35" Height="50" Width="50">
-                    <lottie:Heart />
-                </muxc:AnimatedVisualPlayer>
+                <ToggleButton IsChecked="{x:Bind Like, Mode=TwoWay}">
+                    <muxc:AnimatedVisualPlayer x:Name="visualPlayer" AutoPlay="False" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="35" Height="50" Width="50">
+                        <interaction:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction
+                                Command="{x:Bind ChangeSelectionCommand}"
+                                CommandParameter="{Binding ElementName=visualPlayer}"/>
+                            </core:EventTriggerBehavior>
+                        </interaction:Interaction.Behaviors>
+                        <lottie:Heart />
+                    </muxc:AnimatedVisualPlayer>
+                </ToggleButton>
             </Grid>
         </DataTemplate>
     </UserControl.Resources>

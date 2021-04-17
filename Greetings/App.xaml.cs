@@ -16,6 +16,9 @@ namespace Greetings
     sealed partial class App : Application
     {
 
+        /// <summary>
+        /// Reference to MainViewModel object
+        /// </summary>
         internal MainViewModel MainViewModel { get; set; }
 
         /// <summary>

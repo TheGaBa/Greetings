@@ -29,7 +29,7 @@
         <Grid RequestedTheme="Light" Height="600" CornerRadius="35" Background="White" VerticalAlignment="Center" Margin="60">
              <Image PointerPressed="Image_PointerPressed" Height="30" Width="30" Margin="30" HorizontalAlignment="Right" VerticalAlignment="Top" Source="/Assets/Images/cancel.png"/>
             <TextBlock Text="Favourites" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="30" FontSize="35" FontWeight="Bold" FontFamily="Agency FB" />
-            <myControls:VouchersControl ItemsSource="{x:Bind ViewModel.Favourites}" VerticalAlignment="Top" Margin="80"/>
+            <myControls:VouchersControl x:Name="voucherControl" ItemsSource="{x:Bind ViewModel.Favourites}" VerticalAlignment="Top" Margin="80"/>
         </Grid>
     </Grid>
 </Page>
