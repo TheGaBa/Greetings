@@ -1,6 +1,8 @@
-﻿using Greetings.Services;
+﻿using Database;
+using Greetings.Services;
 using Greetings.ViewModels;
 using Greetings.Views;
+using Microsoft.EntityFrameworkCore;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -77,6 +79,11 @@ namespace Greetings
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
+            }
+
+            using (MyDBContext context = new MyDBContext())
+            {
+                context.Database.Migrate();
             }
         }
 

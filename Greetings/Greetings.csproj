@@ -131,7 +131,6 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\ErrorModel.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Models\VoucherModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controls\VouchersControl.xaml.cs">
@@ -250,6 +249,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
+      <Version>3.1.14</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.12</Version>
     </PackageReference>
@@ -274,7 +276,12 @@
     <None Include="Assets\Lottie\heart.json" />
     <None Include="Assets\Lottie\travel.json" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{b046f768-b548-49a8-b45a-358868b48deb}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
