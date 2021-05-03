@@ -6,6 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\greenland.png" />
+    <None Remove="Images\India.jpg" />
+    <None Remove="Images\japan.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\greenland.png" />
+    <Content Include="Images\India.jpg" />
+    <Content Include="Images\japan.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.14">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

@@ -9,8 +9,9 @@
     xmlns:models="using:Greetings.Models" 
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:lottie="using:AnimatedVisuals" xmlns:interaction="using:Microsoft.Xaml.Interactivity" xmlns:core="using:Microsoft.Xaml.Interactions.Core"
-    Height="450">
-
+    >
+    <!--Height="450"-->
+    
     <UserControl.Resources>
         <DataTemplate x:Name="ImageOverlayTemplate" x:DataType="models:VoucherModel">
             <Grid Width="400" Height="350" CornerRadius="15" >
@@ -45,13 +46,13 @@
     </UserControl.Resources>
 
     <GridView x:Name="myGridView" Margin="20" 
-              ScrollViewer.HorizontalScrollBarVisibility="Auto"
-              ScrollViewer.HorizontalScrollMode="Auto"
-              ScrollViewer.VerticalScrollBarVisibility="Disabled"
-              ScrollViewer.VerticalScrollMode="Disabled" 
               ItemTemplate="{StaticResource ImageOverlayTemplate}" 
               IsTabStop="False"
               ItemsSource="{x:Bind ItemsSource}" >
+              <!--ScrollViewer.HorizontalScrollBarVisibility="Auto"
+              ScrollViewer.HorizontalScrollMode="Auto"
+              ScrollViewer.VerticalScrollBarVisibility="Disabled"
+              ScrollViewer.VerticalScrollMode="Disabled"--> 
 
         <GridView.ItemContainerStyle>
             <Style TargetType="GridViewItem">
@@ -59,10 +60,10 @@
             </Style>
         </GridView.ItemContainerStyle>
 
-        <GridView.ItemsPanel>
+        <!--<GridView.ItemsPanel>
             <ItemsPanelTemplate>
                 <ItemsWrapGrid Orientation="Vertical"/>
             </ItemsPanelTemplate>
-        </GridView.ItemsPanel>
+        </GridView.ItemsPanel>-->
     </GridView>
 </UserControl>
