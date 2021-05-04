@@ -16,6 +16,12 @@
         <viewModels:MainViewModel x:Name="ViewModel"/>
     </Page.DataContext>
 
+    <interactivity:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded" >
+            <core:InvokeCommandAction Command="{x:Bind ViewModel.LoadedCommand}"/>
+        </core:EventTriggerBehavior>
+    </interactivity:Interaction.Behaviors>
+
     <Page.Resources>
         <Storyboard x:Name="PointerEnterAnimationHome">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
@@ -184,20 +190,11 @@
             </RichTextBlock>
         </Grid>
         <Grid  Grid.Column="1" Grid.Row="1" >
-            <Pivot Margin="40" >
-                <PivotItem Header="New" >
-                    <controls:VouchersControl ItemsSource="{x:Bind ViewModel.Newest}" VerticalAlignment="Top" />
-                </PivotItem>
-                <PivotItem Header="Popular">
-                    <controls:VouchersControl ItemsSource="{x:Bind ViewModel.Popular}" VerticalAlignment="Top" />
-                </PivotItem>
-                <PivotItem Header="Recommendations">
-                    <controls:VouchersControl ItemsSource="{x:Bind ViewModel.Recommendations}" VerticalAlignment="Top" />
-                </PivotItem>
-                <PivotItem Header="Best Price">
-                    <controls:VouchersControl ItemsSource="{x:Bind ViewModel.BestPrices}" VerticalAlignment="Top" />
-                </PivotItem>
-            </Pivot>
+            <controls:VouchersControl 
+                Margin="40" 
+                ItemsSource="{x:Bind ViewModel.Cards}" 
+                VerticalAlignment="Top" />
+           
             <Grid Background="White" Height="60" Width="750" Margin="0,-30,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" CornerRadius="16,16,16,16" BorderBrush="#FF530A98" BorderThickness="3,3,3,3" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />

@@ -12,8 +12,6 @@ namespace Database.Models
 
         public string CityName { get; set; }
 
-        public byte[] Image { get; set; }
-
         public List<Place> Places { get; set; }
     }
 }

@@ -124,6 +124,7 @@
     <Compile Include="Assets\Lottie\Code.cs" />
     <Compile Include="Assets\Lottie\Heart.cs" />
     <Compile Include="Assets\Lottie\Travel.cs" />
+    <Compile Include="Helpers\ImageConverter.cs" />
     <Compile Include="Helpers\Json.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
     <Compile Include="Helpers\VisualManager.cs" />
