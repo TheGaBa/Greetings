@@ -13,8 +13,8 @@ namespace Greetings.Controls
     {
         public PlaceModel Place
         {
-            get { return (PlaceModel)GetValue(PlaceProperty); }
-            set { SetValue(PlaceProperty, value); }
+            get => GetValue(PlaceProperty) as PlaceModel; 
+            set => SetValue(PlaceProperty, value);
         }
 
         // Using a DependencyProperty as the backing store for Place.  This enables animation, styling, binding, etc...

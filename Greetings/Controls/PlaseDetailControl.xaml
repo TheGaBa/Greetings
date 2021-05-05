@@ -8,6 +8,22 @@
     mc:Ignorable="d" >
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Image Source="{x:Bind Place.ImageSource, Mode=OneWay}" Stretch="Uniform"/>
+
+        <StackPanel Grid.Column="1" Background="Beige" >
+            <TextBlock Foreground="Black" FontSize="20" Text="{x:Bind Place.Name, Mode=OneWay}" />
+            <TextBlock Foreground="Black" FontSize="20" Text="{x:Bind Place.Cost, Mode=OneWay}"/>
+            <TextBlock Foreground="Black" FontSize="20" Text="{x:Bind Place.Address, Mode=OneWay}"/>
+        </StackPanel>
     </Grid>
 </Page>
