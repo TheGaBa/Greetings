@@ -73,16 +73,14 @@ namespace Greetings.ViewModels
         {
             using (MyDBContext context = new MyDBContext())
             {
-                foreach (var place in await context.Places.ToListAsync())
+                foreach (var city in await context.Cities.ToListAsync())
                 {
                     var card = new VoucherModel();
 
-                    card.ImageSource = await ImageConverter.GetBitmapAsync(place.Image);
-                    card.Like = place.Like;
-                    card.Location = Repository.GetCityName(place.CityId);
-                    card.Name = place.PlaceName;
-                    card.Price = place.Cost.ToString();
-                    card.Stars = "12-10";
+                    card.ImageSource = await ImageConverter.GetBitmapAsync(city.Image);
+                    card.Name = city.CityName;
+                    card.Location = "Count of attractions: " + Repository.GetPlacesCount(city.CityId).ToString();
+                    card.Stars = city.Rating;
 
                     Cards.Add(card);
                 }

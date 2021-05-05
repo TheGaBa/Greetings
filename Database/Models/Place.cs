@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Database.Models
@@ -16,12 +15,11 @@ namespace Database.Models
         
         public int Time { get; set; }
         
-        public string Street { get; set; }
+        public string Address { get; set; }
         
         public byte[] Image { get; set; }
 
-        [DefaultValue(false)]
-        public bool Like { get; set; }
+        public string Descriprion { get; set; }
 
         public int CityId { get; set; }
         

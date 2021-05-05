@@ -190,7 +190,7 @@
             </RichTextBlock>
         </Grid>
         <Grid  Grid.Column="1" Grid.Row="1" >
-            <controls:VouchersControl 
+            <controls:CityControl 
                 Margin="40" 
                 ItemsSource="{x:Bind ViewModel.Cards}" 
                 VerticalAlignment="Top" />

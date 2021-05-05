@@ -10,10 +10,10 @@ using Windows.UI.Xaml.Controls.Primitives;
 
 namespace Greetings.Controls
 {
-    public sealed partial class VouchersControl : UserControl
+    public sealed partial class CityControl : UserControl
     {
         public static readonly DependencyProperty ItemsSourceProperty =
-            DependencyProperty.Register("ItemsSource", typeof(ObservableCollection<VoucherModel>), typeof(VouchersControl), new PropertyMetadata(null));
+            DependencyProperty.Register("ItemsSource", typeof(ObservableCollection<VoucherModel>), typeof(CityControl), new PropertyMetadata(null));
 
         public ObservableCollection<VoucherModel> ItemsSource
         {
@@ -21,7 +21,7 @@ namespace Greetings.Controls
             set => SetValue(ItemsSourceProperty, value);
         }
 
-        public VouchersControl()
+        public CityControl()
         {
             this.InitializeComponent();
         }

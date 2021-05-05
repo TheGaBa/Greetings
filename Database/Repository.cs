@@ -4,16 +4,16 @@ namespace Database
 {
     public static class Repository
     {
-        public static string GetCityName(int cityId)
+        public static int GetPlacesCount(int cityId)
         {
-            string cityName = string.Empty;
+            int countOfPlaces = 0;
 
             using (MyDBContext context = new MyDBContext())
             {
-                cityName = context.Cities.FirstOrDefault(city => city.CityId == cityId)?.CityName;
+                countOfPlaces = context.Places.Count(place => place.CityId == cityId);
             }
 
-            return cityName ?? "Unknown";
+            return countOfPlaces;
         }
     }
 }
