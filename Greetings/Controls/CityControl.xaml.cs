@@ -1,5 +1,6 @@
-﻿using Greetings.Helpers;
-using Greetings.Models;
+﻿using Greetings.Models;
+using Greetings.Services;
+using Greetings.Views;
 using Microsoft.UI.Xaml.Controls;
 using System.Collections.ObjectModel;
 using Windows.UI.Xaml;
@@ -12,14 +13,25 @@ namespace Greetings.Controls
 {
     public sealed partial class CityControl : UserControl
     {
-        public static readonly DependencyProperty ItemsSourceProperty =
-            DependencyProperty.Register("ItemsSource", typeof(ObservableCollection<VoucherModel>), typeof(CityControl), new PropertyMetadata(null));
+        //internal static readonly DependencyProperty ItemsSourceProperty =
+        //    DependencyProperty.Register("ItemsSource", typeof(ObservableCollection<CityModel>), typeof(CityControl), new PropertyMetadata(null));
 
-        public ObservableCollection<VoucherModel> ItemsSource
+        //internal ObservableCollection<CityModel> ItemsSource
+        //{
+        //    get => (ObservableCollection<CityModel>)GetValue(ItemsSourceProperty);
+        //    set => SetValue(ItemsSourceProperty, value);
+        //}
+
+        public ObservableCollection<CityModel> ItemSource
         {
-            get => (ObservableCollection<VoucherModel>)GetValue(ItemsSourceProperty);
-            set => SetValue(ItemsSourceProperty, value);
+            get { return (ObservableCollection<CityModel>)GetValue(ItemSourceProperty); }
+            set { SetValue(ItemSourceProperty, value); }
         }
+
+        // Using a DependencyProperty as the backing store for ItemSource.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ItemSourceProperty =
+            DependencyProperty.Register("ItemSource", typeof(ObservableCollection<CityModel>), typeof(CityControl), new PropertyMetadata(0));
+
 
         public CityControl()
         {
@@ -38,6 +50,12 @@ namespace Greetings.Controls
             {
                 player.SetProgress(0);
             }
+        }
+
+        private void myGridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int clickedCityId = (e.ClickedItem as CityModel).ID;
+            NavigationService.Navigate<PlacesPage>(clickedCityId);
         }
     }
 }

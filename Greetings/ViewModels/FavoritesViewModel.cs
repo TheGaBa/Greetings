@@ -7,7 +7,7 @@ namespace Greetings.ViewModels
 {
     public class FavoritesViewModel
     {
-        public ObservableCollection<VoucherModel> Favourites { get; set; }
+        public ObservableCollection<PlaceModel> Favourites { get; set; }
        
         public FavoritesViewModel()
         {

@@ -4,9 +4,8 @@
     xmlns:local="using:Greetings"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Custom="using:System.Numerics" x:Name="page"
     x:Class="Greetings.MainPage"
-    xmlns:controls="using:Greetings.Controls"
+    xmlns:customControls="using:Greetings.Controls"
     xmlns:viewModels="using:Greetings.ViewModels" 
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity" 
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
@@ -189,12 +188,12 @@
                 <Paragraph>for your vacation</Paragraph>
             </RichTextBlock>
         </Grid>
-        <Grid  Grid.Column="1" Grid.Row="1" >
-            <controls:CityControl 
-                Margin="40" 
-                ItemsSource="{x:Bind ViewModel.Cards}" 
+        <Grid Grid.Column="1" Grid.Row="1" >
+            <customControls:CityControl
+                Margin="40"
+                ItemSource="{x:Bind ViewModel.Cities}"
                 VerticalAlignment="Top" />
-           
+
             <Grid Background="White" Height="60" Width="750" Margin="0,-30,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" CornerRadius="16,16,16,16" BorderBrush="#FF530A98" BorderThickness="3,3,3,3" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />

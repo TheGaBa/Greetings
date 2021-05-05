@@ -27,7 +27,7 @@ namespace Greetings.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            ViewModel.Favourites = e.Parameter as ObservableCollection<VoucherModel>;
+            ViewModel.Favourites = e.Parameter as ObservableCollection<PlaceModel>;
     
             base.OnNavigatedTo(e);
         }

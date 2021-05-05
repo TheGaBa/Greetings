@@ -8,22 +8,28 @@ using Windows.UI.Xaml.Media;
 
 namespace Greetings.Models
 {
-    internal class CityModel
+    public class CityModel
     {
         public CityModel()
         {
-            ChangeSelectionCommand = new RelayCommand<AnimatedVisualPlayer>(ChangeSelection);
+            FavouriteChangedCommand = new RelayCommand<AnimatedVisualPlayer>(ChangeFavouriteState);
         }
 
-        internal string Name { get; set; }
+        public int ID { get; set; }
 
-        internal bool Like { get; set; } = false;
+        public string Name { get; set; }
 
-        internal ImageSource ImageSource { get; set; }
+        public bool Like { get; set; } = false;
 
-        internal ICommand ChangeSelectionCommand { get; set; }
+        public string Rating { get; set; }
 
-        private void ChangeSelection(AnimatedVisualPlayer player)
+        public string CountOfPlaces { get; set; }
+
+        public ImageSource ImageSource { get; set; }
+
+        public ICommand FavouriteChangedCommand { get; set; }
+
+        private void ChangeFavouriteState(AnimatedVisualPlayer player)
         {
             var parent = (player.Parent as Control).Parent;
             var textBlock = VisualManager.FindControl<TextBlock>(parent as UIElement, typeof(TextBlock), "tourName");

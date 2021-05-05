@@ -6,20 +6,15 @@ using Greetings.Views;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
-using System;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq;
 using System.Windows.Input;
-using Windows.Security.Cryptography.Certificates;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Media.Imaging;
 
 namespace Greetings.ViewModels
 {
     public class MainViewModel : ObservableObject
     {
-        public ObservableCollection<VoucherModel> Cards = new ObservableCollection<VoucherModel>();
+        public ObservableCollection<CityModel> Cities = new ObservableCollection<CityModel>();
 
         public MainViewModel()
         {
@@ -35,11 +30,11 @@ namespace Greetings.ViewModels
             }
         }
 
-        public ICommand ShowInfoCommand { get; }
-        public ICommand ShowHelpCommand { get; }
-        public ICommand ShowFavouritesCommand { get; set; }
-        public ICommand ExitCommand { get; }
-        public ICommand LoadedCommand { get; }
+        internal ICommand ShowInfoCommand { get; }
+        internal ICommand ShowHelpCommand { get; }
+        internal ICommand ShowFavouritesCommand { get; }
+        internal ICommand ExitCommand { get; }
+        internal ICommand LoadedCommand { get; }
 
         internal void AddToFavourite(string nameOfTour)
         {
@@ -61,7 +56,7 @@ namespace Greetings.ViewModels
             //Favourites.Add(selected);
         }
 
-        internal void RemoveFromFavourite(VoucherModel selected)
+        internal void RemoveFromFavourite(PlaceModel selected)
         {
             //if (Favourites.Contains(selected))
             //{
@@ -75,14 +70,17 @@ namespace Greetings.ViewModels
             {
                 foreach (var city in await context.Cities.ToListAsync())
                 {
-                    var card = new VoucherModel();
+                    var card = new CityModel()
+                    {
+                        ID = city.CityId,
+                        ImageSource = await ImageConverter.GetBitmapAsync(city.Image),
+                        Name = city.CityName,
+                        CountOfPlaces = "Count of attractions: " + Repository.GetPlacesCount(city.CityId).ToString(),
+                        Rating = city.Rating,
+                        Like = city.Like
+                    };
 
-                    card.ImageSource = await ImageConverter.GetBitmapAsync(city.Image);
-                    card.Name = city.CityName;
-                    card.Location = "Count of attractions: " + Repository.GetPlacesCount(city.CityId).ToString();
-                    card.Stars = city.Rating;
-
-                    Cards.Add(card);
+                    Cities.Add(card);
                 }
             }
         }
