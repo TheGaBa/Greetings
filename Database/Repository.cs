@@ -1,6 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Database.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace Database
@@ -36,6 +39,29 @@ namespace Database
 
                 await context.SaveChangesAsync();
             }
+        }
+
+        public static async Task<List<City>> FindOverlaps(string searchText)
+        {
+            List<City> cities;
+
+            using (MyDBContext context = new MyDBContext())
+            {
+                cities = await context.Cities.Where(city => city.CityName.ToLower().Contains(searchText.ToLower())).ToListAsync();
+            }
+
+            return cities;
+        }
+
+        public static async Task<List<City>> GetCities()
+        {
+            List<City> cities;
+            using (MyDBContext context = new MyDBContext())
+            {
+                cities = await context.Cities.ToListAsync();
+            }
+
+            return cities;
         }
     }
 }

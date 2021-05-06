@@ -1,10 +1,5 @@
-﻿using Greetings.Models;
-using Greetings.Services;
-using System.Collections.ObjectModel;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using Windows.UI.Xaml.Input;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -20,14 +15,9 @@ namespace Greetings.Views
             this.InitializeComponent();
         }
 
-        private void Image_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            NavigationService.Navigate(typeof(MainPage), (Application.Current as App).MainViewModel);
-        }
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            ViewModel.Favourites = e.Parameter as ObservableCollection<PlaceModel>;
+            ViewModel.Initialize();
     
             base.OnNavigatedTo(e);
         }

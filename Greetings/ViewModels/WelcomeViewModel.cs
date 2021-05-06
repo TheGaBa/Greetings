@@ -1,10 +1,13 @@
 ﻿using Database;
+using Database.Models;
 using Greetings.Helpers;
 using Greetings.Models;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 
 namespace Greetings.ViewModels
@@ -20,53 +23,63 @@ namespace Greetings.ViewModels
 
         internal ICommand LoadedCommand { get; }
 
-        internal void AddToFavourite(string nameOfTour)
-        {
-            //VoucherModel selected = Popular.FirstOrDefault(item => item.Name == nameOfTour);
-            //if (selected == null)
-            //{
-            //    selected = Recommendations.FirstOrDefault(item => item.Name == nameOfTour);
-            //}
-            //if (selected == null)
-            //{
-            //    selected = BestPrices.FirstOrDefault(item => item.Name == nameOfTour);
-            //}
-            //if (selected == null)
-            //{
-            //    selected = Newest.FirstOrDefault(item => item.Name == nameOfTour);
-            //}
-            //if (Favourites.Contains(selected)) return;
-
-            //Favourites.Add(selected);
-        }
-
-        internal void RemoveFromFavourite(PlaceModel selected)
-        {
-            //if (Favourites.Contains(selected))
-            //{
-            //    Favourites.Remove(selected);
-            //}
-        }
-
         private async void Loaded()
         {
-            using (MyDBContext context = new MyDBContext())
-            {
-                foreach (var city in await context.Cities.ToListAsync())
-                {
-                    var card = new CityModel()
-                    {
-                        ID = city.CityId,
-                        ImageSource = await ImageConverter.GetBitmapAsync(city.Image),
-                        Name = city.CityName,
-                        CountOfPlaces = "Count of attractions: " + Repository.GetPlacesCount(city.CityId).ToString(),
-                        Rating = city.Rating,
-                        Like = city.Like
-                    };
+            List<City> loadedCities = await Repository.GetCities();
 
-                    Cities.Add(card);
-                }
-            }
+            ExcludeRepeated(loadedCities);
+
+            AddCities(loadedCities);
         }
+
+        internal async void FindOverpals(string searchText)
+        {
+            if (String.IsNullOrEmpty(searchText))
+            {
+                Loaded();
+                return;
+            }
+
+            var overpals = await Repository.FindOverlaps(searchText);
+
+            ExcludeUselessFromCities(overpals);
+
+            ExcludeRepeated(overpals);
+
+            AddCities(overpals);
+        }
+
+        /// <summary>
+        /// Add collection of cities of <see cref="WelcomeViewModel.Cities"/>
+        /// </summary>
+        /// <param name="list">List of items for adding</param>
+        private void AddCities(List<City> list) => list.ForEach(
+               async city => Cities.Add(new CityModel()
+               {
+                   ID = city.CityId,
+                   ImageSource = await ImageConverter.GetBitmapAsync(city.Image),
+                   Name = city.CityName,
+                   CountOfPlaces = "Count of attractions: " + Repository.GetPlacesCount(city.CityId).ToString(),
+                   Rating = city.Rating,
+                   Like = city.Like
+               }));
+
+        /// <summary>
+        /// Exclude items from matches, that is already exist in cities to optimize interface performance 
+        /// </summary>
+        /// <param name="matches">List of items to compare</param>
+        private void ExcludeRepeated(List<City> matches) => matches.RemoveAll(match => Cities.Count(city => city.ID == match.CityId) > 0);
+
+        /// <summary>
+        /// Exclude items from cities, that is not exist in matches
+        /// </summary>
+        /// <param name="matches">List of items to compare</param>
+        private void ExcludeUselessFromCities(List<City> matches) => matches.ForEach(match =>
+                {
+                    var uselllesElement = Cities.FirstOrDefault(city => city.ID != match.CityId);
+
+                    if (uselllesElement != null) Cities.Remove(uselllesElement);
+                });
+
     }
 }

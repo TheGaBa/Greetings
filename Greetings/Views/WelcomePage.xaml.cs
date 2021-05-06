@@ -26,5 +26,10 @@ namespace Greetings.Views
         {
             this.InitializeComponent();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ViewModel.FindOverpals((sender as TextBox).Text);
+        }
     }
 }
