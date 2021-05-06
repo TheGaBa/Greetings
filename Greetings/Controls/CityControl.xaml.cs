@@ -13,24 +13,15 @@ namespace Greetings.Controls
 {
     public sealed partial class CityControl : UserControl
     {
-        //internal static readonly DependencyProperty ItemsSourceProperty =
-        //    DependencyProperty.Register("ItemsSource", typeof(ObservableCollection<CityModel>), typeof(CityControl), new PropertyMetadata(null));
-
-        //internal ObservableCollection<CityModel> ItemsSource
-        //{
-        //    get => (ObservableCollection<CityModel>)GetValue(ItemsSourceProperty);
-        //    set => SetValue(ItemsSourceProperty, value);
-        //}
-
         public ObservableCollection<CityModel> ItemSource
         {
-            get { return (ObservableCollection<CityModel>)GetValue(ItemSourceProperty); }
-            set { SetValue(ItemSourceProperty, value); }
+            get => GetValue(ItemSourceProperty) as ObservableCollection<CityModel>;
+            set => SetValue(ItemSourceProperty, value);
         }
 
         // Using a DependencyProperty as the backing store for ItemSource.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ItemSourceProperty =
-            DependencyProperty.Register("ItemSource", typeof(ObservableCollection<CityModel>), typeof(CityControl), new PropertyMetadata(0));
+            DependencyProperty.Register("ItemSource", typeof(ObservableCollection<CityModel>), typeof(CityControl), new PropertyMetadata(null));
 
 
         public CityControl()

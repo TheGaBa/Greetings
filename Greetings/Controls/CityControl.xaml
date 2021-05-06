@@ -46,9 +46,9 @@
 
     <GridView x:Name="myGridView" Margin="20" 
               ItemTemplate="{StaticResource ImageOverlayTemplate}" 
-              IsTabStop="False"        
+              IsTabStop="False"       
               IsItemClickEnabled="True"
-              ItemsSource="{x:Bind ItemSource}"
+              ItemsSource="{x:Bind ItemSource, Mode=TwoWay}"
               ItemClick="myGridView_ItemClick">
 
         <GridView.ItemContainerStyle>

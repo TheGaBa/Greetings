@@ -1,6 +1,7 @@
 ﻿using Greetings.Services;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,6 +24,12 @@ namespace Greetings.Views
         {
             mediaPlayerControl.MediaPlayer.Pause();
             NavigationService.Navigate(typeof(MainPage));
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            mediaPlayerControl.MediaPlayer.Pause();
+            base.OnNavigatedFrom(e);
         }
     }
 }

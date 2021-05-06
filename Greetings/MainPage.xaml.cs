@@ -1,8 +1,5 @@
-﻿using Greetings.ViewModels;
-using System.Net.Mail;
-using Windows.UI.Xaml.Controls;
+﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -13,20 +10,15 @@ namespace Greetings
     /// </summary>
     public sealed partial class MainPage : Page
     {
-
         public MainPage()
         {
             this.InitializeComponent();
+            ViewModel.Initialize(mainFrame);
         }
 
         private void element_PointerEnteredHome(object sender, PointerRoutedEventArgs e)
         {
             PointerEnterAnimationHome.Begin();
-        }
-
-        private void element_PointerEnteredLocation(object sender, PointerRoutedEventArgs e)
-        {
-            PointerEnterAnimationLocation.Begin();
         }
 
         private void element_PointerEnteredFavorite(object sender, PointerRoutedEventArgs e)
@@ -47,17 +39,6 @@ namespace Greetings
         private void element_PointerEnteredHelp(object sender, PointerRoutedEventArgs e)
         {
             PointerEnterAnimationHelp.Begin();
-        }
-
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            if (e.Parameter != null)
-            {
-                ViewModel = e.Parameter as MainViewModel;
-            }
-
-            base.OnNavigatedTo(e);
         }
     }
 }

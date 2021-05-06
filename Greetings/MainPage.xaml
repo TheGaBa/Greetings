@@ -15,12 +15,6 @@
         <viewModels:MainViewModel x:Name="ViewModel"/>
     </Page.DataContext>
 
-    <interactivity:Interaction.Behaviors>
-        <core:EventTriggerBehavior EventName="Loaded" >
-            <core:InvokeCommandAction Command="{x:Bind ViewModel.LoadedCommand}"/>
-        </core:EventTriggerBehavior>
-    </interactivity:Interaction.Behaviors>
-
     <Page.Resources>
         <Storyboard x:Name="PointerEnterAnimationHome">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)">
@@ -83,18 +77,13 @@
     </Page.Background>
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="270"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-
             <ColumnDefinition Width="70"/>
             <ColumnDefinition Width="*"/>
-
         </Grid.ColumnDefinitions>
+
         <!--Side panel-->
-        <Grid Background="#FF6729A6" Grid.RowSpan="2">
+        <Grid Background="#FF6729A6">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="90"/>
@@ -110,6 +99,11 @@
 
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
                     <Image x:Name="image" Source="/Assets/Images/log_cabin.png" Height="30" Width="30" Margin="0,20,0,20" PointerEntered="element_PointerEnteredHome" RenderTransformOrigin="0.5,0.5">
+                        <interactivity:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                <core:InvokeCommandAction Command="{x:Bind ViewModel.ShowWelcomePageCommand}" />
+                            </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
                         <Image.RenderTransform>
                             <CompositeTransform/>
                         </Image.RenderTransform>
@@ -177,68 +171,7 @@
             </Grid>
         </Grid>
 
-        <!--Hello area-->
-        <Grid Grid.Column="1" >
-            <Grid.Background>
-                <ImageBrush ImageSource="/Assets/Images/ParallaxHeader.jpg" Stretch="UniformToFill"/>
-            </Grid.Background>
-            <TextBlock HorizontalAlignment="Left" Margin="54,42,0,0" Text="Hey, Billy!" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="124" Foreground="White" FontSize="20"/>
-            <RichTextBlock HorizontalAlignment="Left" Margin="54,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="108" Width="523" Foreground="White" FontSize="40" FontWeight="Bold">
-                <Paragraph>Let's find the best place</Paragraph>
-                <Paragraph>for your vacation</Paragraph>
-            </RichTextBlock>
-        </Grid>
-        <Grid Grid.Column="1" Grid.Row="1" >
-            <customControls:CityControl
-                Margin="40"
-                ItemSource="{x:Bind ViewModel.Cities}"
-                VerticalAlignment="Top" />
-
-            <Grid Background="White" Height="60" Width="750" Margin="0,-30,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" CornerRadius="16,16,16,16" BorderBrush="#FF530A98" BorderThickness="3,3,3,3" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="1" />
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="1" />
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="140" />
-                </Grid.ColumnDefinitions>
-
-                <Grid Grid.Column="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="40" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Width="30" Height="30" Source="/Assets/Images/location.png" HorizontalAlignment="Right" VerticalAlignment="Center" />
-                    <TextBox Style="{StaticResource TextBoxStyleWithoutBorder}" Grid.Column="1" PlaceholderText="Where are you going?" FontSize="14" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Width="162" BorderBrush="#66FFFFFF"/>
-                </Grid>
-
-                <Grid Grid.Column="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="40" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Width="30" Height="30" Source="/Assets/Images/date_from.png" HorizontalAlignment="Right" VerticalAlignment="Center" />
-                    <CalendarDatePicker Style="{StaticResource MyCalendarDatePickerStyle}" Grid.Column="1" PlaceholderText="Check in" HorizontalAlignment="Center" Width="161" FontSize="14" />
-                </Grid>
-
-                <Grid Grid.Column="4">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="40" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Width="30" Height="30" Source="/Assets/Images/date_to.png" HorizontalAlignment="Right" VerticalAlignment="Center" />
-                    <CalendarDatePicker Style="{StaticResource MyCalendarDatePickerStyle}" Grid.Column="1" PlaceholderText="Check out" HorizontalAlignment="Center" Width="161" FontSize="14" />
-                </Grid>
-
-                <StackPanel Background="Gray" Width="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" CornerRadius="3"/>
-                <StackPanel Background="Gray" Width="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" CornerRadius="3"/>
-
-                <Button Grid.Column="5" Height="50" Width="136" CornerRadius="0,12,12,0" Content="Find Options" HorizontalAlignment="Center" Background="#7C8F0AB6"/>
-
-            </Grid>
-        </Grid>
-
+        <Frame x:Name="mainFrame" Grid.Column="1"/>
     </Grid>
 
 </Page>
