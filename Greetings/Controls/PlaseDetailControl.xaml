@@ -5,11 +5,12 @@
     xmlns:local="using:Greetings.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:models="using:Greetings.Models"
     mc:Ignorable="d" >
 
-    <Grid>
+    <Grid Margin="25, 10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="200" />
+            <RowDefinition Height="300" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -20,10 +21,53 @@
 
         <Image Source="{x:Bind Place.ImageSource, Mode=OneWay}" Stretch="Uniform"/>
 
-        <StackPanel Grid.Column="1" Background="Beige" >
-            <TextBlock Foreground="Black" FontSize="20" Text="{x:Bind Place.Name, Mode=OneWay}" />
-            <TextBlock Foreground="Black" FontSize="20" Text="{x:Bind Place.Cost, Mode=OneWay}"/>
-            <TextBlock Foreground="Black" FontSize="20" Text="{x:Bind Place.Address, Mode=OneWay}"/>
-        </StackPanel>
+        <RichTextBlock Grid.Column="1" Margin="15, 8" Foreground="Black" FontSize="20" TextWrapping="Wrap">
+            <Paragraph>
+                Place name:
+                <Run Text="{x:Bind Place.Name, Mode=OneWay}"/>
+            </Paragraph>
+            <Paragraph>
+                Cost:
+                <Run Text="{x:Bind Place.Cost, Mode=OneWay}"/>
+            </Paragraph>
+            <Paragraph>
+                Address:
+                <Run Text="{x:Bind Place.Address, Mode=OneWay}"/>
+            </Paragraph>
+            <Paragraph>
+                Time:
+                <Run Text="{x:Bind Place.Time, Mode=OneWay}"/>
+            </Paragraph>
+            <Paragraph>
+                Description:
+                <Run Text="{x:Bind Place.Descriprion, Mode=OneWay}"/>
+            </Paragraph>
+        </RichTextBlock>
+
+        <controls:Carousel 
+            Grid.Row="2" Grid.ColumnSpan="2" Background="Aqua"
+            InvertPositive="True"
+            ItemDepth="0"
+            ItemMargin="-411"
+            ItemRotationX="0"
+            ItemRotationY="0"
+            ItemRotationZ ="0"
+            Orientation="Horizontal"
+            ItemsSource="{x:Bind Place.ImageSources}"
+            SelectedIndex="12" >
+
+            <controls:Carousel.EasingFunction>
+                <CubicEase EasingMode="EaseOut" />
+            </controls:Carousel.EasingFunction>
+            <controls:Carousel.ItemTemplate>
+                <DataTemplate>
+                    <Image Width="200"
+                  Height="200"
+                  VerticalAlignment="Bottom"
+                  Source="{Binding}"
+                  Stretch="Uniform" />
+                </DataTemplate>
+            </controls:Carousel.ItemTemplate>
+        </controls:Carousel>
     </Grid>
 </Page>

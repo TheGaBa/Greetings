@@ -17,17 +17,14 @@
 
     <Page.Resources>
         <DataTemplate x:Key="ItemTemplate" x:DataType="models:PlaceModel">
-            <Grid Height="60">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <StackPanel
-                    Grid.Column="1"
-                    VerticalAlignment="Center">
-                    <TextBlock Text="{x:Bind Name}" />
-                    <TextBlock Text="{x:Bind Cost}" />
-                </StackPanel>
+            <Grid Height="120" Width="315" CornerRadius="12">
+                <Grid.Background>
+                    <ImageBrush ImageSource="{x:Bind ImageSource}" Stretch="Fill"/>
+                </Grid.Background>
+                <Grid>
+                    <TextBlock Text="{x:Bind Name}" HorizontalAlignment="Left"  FontSize="22" VerticalAlignment="Top" Margin="15, 10" FontWeight="Bold" Foreground="White" />
+                    <TextBlock Text="{x:Bind Cost}" HorizontalAlignment="Left"  FontSize="22" VerticalAlignment="Top" Margin="15, 35" FontWeight="Bold" Foreground="White" />
+                </Grid>
             </Grid>
         </DataTemplate>
 
@@ -55,15 +52,22 @@
                     Text="{Binding}" />
             </Grid>
         </DataTemplate>
+
         <DataTemplate x:Key="MinimalMasterHeaderTemplate">
             <Grid Height="40">
                 <TextBlock
                     x:Name="headerText"
-                    Margin="96,0,0,0"
                     Text="{Binding}"
+                    FontSize="22"
                     VerticalAlignment="Center"/>
             </Grid>
         </DataTemplate>
+
+        <Style TargetType="controls:ListDetailsView" x:Key="ItemContainerStyle">
+            <Style.Setters>
+                <Setter Property="Background" Value="Red"/>
+            </Style.Setters>
+        </Style>
     </Page.Resources>
 
     <Grid x:Name="ContentArea">
@@ -83,14 +87,25 @@
         <controls:ListDetailsView
             x:Name="MasterDetailsViewControl"
             x:Uid="MasterDetail"
+            ListPaneWidth="340"
             BackButtonBehavior="Automatic"
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
             BorderBrush="Transparent"
             DetailsTemplate="{StaticResource DetailsTemplate}"
             ItemsSource="{x:Bind ViewModel.Places}"
-            ItemTemplate="{StaticResource ItemTemplate}"
+            ListHeader="Это Сан Франциско, город в стиле диско"
             ListHeaderTemplate="{StaticResource MinimalMasterHeaderTemplate}"
+            ItemTemplate="{StaticResource ItemTemplate}"
             NoSelectionContentTemplate="{StaticResource NoSelectionContentTemplate}"
-            SelectedItem="{x:Bind ViewModel.Selected, Mode=TwoWay}" />
+            SelectedItem="{x:Bind ViewModel.Selected, Mode=TwoWay}" >
+            <controls:ListDetailsView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Style.Setters>
+                        <Setter Property="Margin" Value="0,3,0,3"/>
+                    </Style.Setters>
+                </Style>
+            </controls:ListDetailsView.ItemContainerStyle> 
+        </controls:ListDetailsView>
+
     </Grid>
 </Page>

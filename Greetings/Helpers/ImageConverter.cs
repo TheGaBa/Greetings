@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.Storage.Streams;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace Database.Helpers
+namespace Greetings.Helpers
 {
     public static class ImageConverter
     {
@@ -29,5 +31,9 @@ namespace Database.Helpers
 
             return bitmapImage;
         }
+
+        private static async Task<ImageSource> GetImageSourceAsync(byte[] data) => await GetBitmapAsync(data);
+
+        public static async Task<ImageSource[]> GetImagesSourceAsync(List<byte[]> list) => await Task.WhenAll(list.ConvertAll(GetImageSourceAsync));
     }
 }

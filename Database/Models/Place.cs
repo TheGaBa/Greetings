@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Database.Models
@@ -24,5 +25,7 @@ namespace Database.Models
         public int CityId { get; set; }
         
         public City City { get; set; }
+
+        public List<ImageStorage> ImageStorage { get; set; }
     }
 }

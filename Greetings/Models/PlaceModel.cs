@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml.Media;
+﻿using System.Collections.Generic;
+using Windows.UI.Xaml.Media;
 
 namespace Greetings.Models
 {
@@ -17,5 +18,7 @@ namespace Greetings.Models
         public string Descriprion { get; set; }
 
         internal ImageSource ImageSource { get; set; }
+
+        public List<ImageSource> ImageSources{ get; set; }
     }
 }
