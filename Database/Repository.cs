@@ -26,5 +26,16 @@ namespace Database
                 return await context.ImageStorage.Where(item => item.PlaceID == placeId).Select(column => column.Image).ToListAsync();
             }
         }
+
+        public static async void SetFavourite(int id, bool like)
+        {
+            using (MyDBContext context = new MyDBContext())
+            {
+                var city = await context.Cities.FindAsync(id);
+                city.Like = like;
+
+                await context.SaveChangesAsync();
+            }
+        }
     }
 }

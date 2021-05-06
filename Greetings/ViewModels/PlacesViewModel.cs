@@ -3,9 +3,7 @@ using Greetings.Helpers;
 using Greetings.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Media;
@@ -54,11 +52,6 @@ namespace Greetings.ViewModels
                     };
 
                     Places.Add(card);
-                 
-                    //foreach (var item in await ImageConverter.CreateImageSources(imagesData))
-                    //{
-                    //    card.ImageSources.Add(item);
-                    //}
                 }
             }
         }

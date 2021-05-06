@@ -23,7 +23,6 @@ namespace Greetings.Controls
         public static readonly DependencyProperty ItemSourceProperty =
             DependencyProperty.Register("ItemSource", typeof(ObservableCollection<CityModel>), typeof(CityControl), new PropertyMetadata(null));
 
-
         public CityControl()
         {
             this.InitializeComponent();
