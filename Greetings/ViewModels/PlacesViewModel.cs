@@ -3,9 +3,12 @@ using Greetings.Helpers;
 using Greetings.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media;
 
 namespace Greetings.ViewModels
 {
@@ -36,7 +39,7 @@ namespace Greetings.ViewModels
                 foreach (var place in await context.Places.Where(place => place.CityId == cityId).ToListAsync())
                 {
                     var imagesData = await Repository.GetImagesDataAsync(place.PlaceId);
-                    var imagesSource = await ImageConverter.GetImagesSourceAsync(imagesData);
+                    var sources = await ImageConverter.CreateImageSources(imagesData);
 
                     var card = new PlaceModel()
                     {
@@ -47,10 +50,15 @@ namespace Greetings.ViewModels
                         Cost = place.Cost,
                         Time = place.Time,
                         Descriprion = place.Descriprion,
-                        ImageSources = imagesSource.ToList()
+                        ImageSources = new ObservableCollection<ImageSource>(sources)
                     };
 
                     Places.Add(card);
+                 
+                    //foreach (var item in await ImageConverter.CreateImageSources(imagesData))
+                    //{
+                    //    card.ImageSources.Add(item);
+                    //}
                 }
             }
         }

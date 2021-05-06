@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using Windows.UI.Xaml.Media;
 
 namespace Greetings.Models
@@ -19,6 +19,6 @@ namespace Greetings.Models
 
         internal ImageSource ImageSource { get; set; }
 
-        public List<ImageSource> ImageSources{ get; set; }
+        public ObservableCollection<ImageSource> ImageSources { get; set; }
     }
 }

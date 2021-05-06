@@ -8,6 +8,21 @@
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls" xmlns:models="using:Greetings.Models"
     mc:Ignorable="d" >
 
+    <Page.Resources>
+        <DataTemplate x:Key="PhotosTemplate">
+            <Grid
+                Background="White"
+                BorderBrush="Black"
+                BorderThickness="1">
+                <Image
+                    Source="{Binding}"
+                    Stretch="UniformToFill"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
     <Grid Margin="25, 10">
         <Grid.RowDefinitions>
             <RowDefinition Height="300" />
@@ -44,30 +59,16 @@
             </Paragraph>
         </RichTextBlock>
 
-        <controls:Carousel 
-            Grid.Row="2" Grid.ColumnSpan="2" Background="Aqua"
-            InvertPositive="True"
-            ItemDepth="0"
-            ItemMargin="-411"
-            ItemRotationX="0"
-            ItemRotationY="0"
-            ItemRotationZ ="0"
-            Orientation="Horizontal"
-            ItemsSource="{x:Bind Place.ImageSources}"
-            SelectedIndex="12" >
+        <controls:AdaptiveGridView Grid.ColumnSpan="2" Grid.Row="1"
+                                   Margin="20"
+                                   StretchContentForSingleRow="False"
+                                   OneRowModeEnabled="False"
+                                   ItemHeight="200"
+                                   DesiredWidth="300"
+                                   SelectionMode="Single"
+                                   IsItemClickEnabled="True"
+                                   ItemsSource="{x:Bind Place.ImageSources, Mode=TwoWay}"
+                                   ItemTemplate="{StaticResource PhotosTemplate}"/>
 
-            <controls:Carousel.EasingFunction>
-                <CubicEase EasingMode="EaseOut" />
-            </controls:Carousel.EasingFunction>
-            <controls:Carousel.ItemTemplate>
-                <DataTemplate>
-                    <Image Width="200"
-                  Height="200"
-                  VerticalAlignment="Bottom"
-                  Source="{Binding}"
-                  Stretch="Uniform" />
-                </DataTemplate>
-            </controls:Carousel.ItemTemplate>
-        </controls:Carousel>
     </Grid>
 </Page>
