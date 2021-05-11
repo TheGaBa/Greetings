@@ -118,13 +118,211 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="greenland" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\greenland.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="anime_shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\tokyo\anime shop.jpeg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="India" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\India.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="arctikum_museum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arctikum museum.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="japan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\japan.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="bc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bc1.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bc2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bc2.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bc3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bc3.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="franciscan_monastery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\franciscan-monastery.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gp1.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gp2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gp2.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gp3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gp3.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Griffith_Park_Los_Angeles_Hiking_Track" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Griffith-Park-Los-Angeles-Hiking-Track.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Healing_springs_in_Terpenye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Healing springs in Terpenye.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="history_of_japan_arts_culture_byoudin_temple_kyoto_tokyo_weekender" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\tokyo\history_of_japan_arts_culture-byoudin-temple-kyoto-tokyo-weekender.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="holly1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\holly1.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="holly2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\holly2.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="holly3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\holly3.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Hollywood_Sign_Zuschnitt_801x501" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hollywood_Sign_Zuschnitt_801x501.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ice_hotel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ice hotel.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="international_spy_museum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\international-spy-museum.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="jefferson_memorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jefferson-memorial.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kreeger_museum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kreeger-museum.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kyoto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kyoto1.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kyoto_national_municipal_museum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kyoto-national-municipal museum.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kyoto_university_of_art" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kyoto university of art.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="La1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\La1.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lapland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lapland.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="La_convention_center" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\La convention center.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="library_of_congress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\library-of-congress.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lincoln_memorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lincoln-memorial.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lumi_linna" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lumi linna.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="madame_tussauds_hollywood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\madame-tussauds-hollywood.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mt1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mt1.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mt2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mt2.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mt3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mt3.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="national_air_and_space_museum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\national-air-and-space-museum.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="national_alley" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\national-alley.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pilke_museum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pilke museum.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ranua_zoo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ranua zoo.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rock_creek_park" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rock-creek-park.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="santa_klaus_village" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\santa klaus village.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Santa_park" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Santa park.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Santa_park2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Santa park2.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sech" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sech.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="siida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\siida.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="smithsonian_national_museum_of_natural_history" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smithsonian-national-museum-of-natural-history.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="The_Broad_Contemporary_Art_Museum_in_Downtown_Los_Angeles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\The Broad Contemporary Art Museum in Downtown Los Angeles.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="the_national_art_center_tokyo_t2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\the-national-art-center-tokyo-t2.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="united_states_capitol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\united-states-capitol.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="usadba_popova" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usadba popova.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="vasilievka_zoo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vasilievka zoo.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="warner_bros" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warner bros.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Washington1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Washington1.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="washington_monument" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\washington-monument.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="washington_national_cathedral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\washington-national-cathedral.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wb1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wb1.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wb2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wb2.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wb3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wb3.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="white_house" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white-house.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yatkankyuntyllya_bridge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yatkankyuntyllya bridge.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="zaporizhzhya_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zaporizhzhya-2.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\tokyo\1.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_10_Hram_imperatora_Meydzi_e1528833104117" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10-Hram_imperatora_Meydzi-e1528833104117.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_12_Perekrestok_na_Sibuya_e1528915241354" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\tokyo\12-perekrestok_na_sibuya-e1528915241354.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_22_Kyoto_International_Manga_Museum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\22-Kyoto_International_Manga_Museum.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_2_Rayon_Asakusa_e1528832886299" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\tokyo\2-rayon_asakusa-e1528832886299.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_2_Zotoy_pavilon_e1528829317599" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2-Zotoy_pavilon-e1528829317599.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_3_Bambukovaya_roshha_Sagano_e1528829507639" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3-Bambukovaya_roshha_Sagano-e1528829507639.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_4_Hram_Kiyomidzue1528829737668" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4-Hram_Kiyomidzue1528829737668.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_4_Outside_Akihabara_Station_e1528841551644" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\tokyo\4-outside_akihabara_station-e1528841551644.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_8_Sad_Happoen_e1528833047691" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8-Sad_Happoen-e1528833047691.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
