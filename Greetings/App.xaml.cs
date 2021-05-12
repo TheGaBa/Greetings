@@ -83,7 +83,7 @@ namespace Greetings
 
             using (MyDBContext context = new MyDBContext())
             {
-                context.Database.Migrate();
+                context.Database.EnsureCreated();
             }
         }
 
