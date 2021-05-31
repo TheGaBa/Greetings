@@ -181,6 +181,9 @@
   <data name="kyoto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kyoto1.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="kyoto2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Kyoto\kyoto2.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="kyoto_national_municipal_museum" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kyoto-national-municipal museum.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

@@ -19,6 +19,13 @@ namespace Greetings.ViewModels
             get => _selected;
             set => SetProperty(ref _selected, value);
         }
+        private string _cityname;
+
+        public string CityName
+        {
+            get => _cityname;
+            set => SetProperty(ref _cityname, value);
+        }
 
         public ObservableCollection<PlaceModel> Places = new ObservableCollection<PlaceModel>();
 
@@ -28,7 +35,16 @@ namespace Greetings.ViewModels
             SetSelectedItem();
         }
 
-        private void SetSelectedItem() => Selected = Places.FirstOrDefault();
+        private void SetSelectedItem()
+        {
+            Selected = Places.FirstOrDefault();
+            using (MyDBContext context = new MyDBContext()) 
+            {
+            var selectedcityid = context.Places.FirstOrDefault(place=> place.PlaceId == Selected.ID).CityId;
+            var selectedcity = context.Cities.FirstOrDefault(city => city.CityId == selectedcityid);
+                CityName = selectedcity.CityName;
+            }
+        }
 
         private async Task LoadPlacesfromDB(int cityId)
         {
@@ -52,7 +68,9 @@ namespace Greetings.ViewModels
                     };
 
                     Places.Add(card);
+
                 }
+       
             }
         }
     }

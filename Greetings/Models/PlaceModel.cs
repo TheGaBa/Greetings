@@ -20,5 +20,6 @@ namespace Greetings.Models
         internal ImageSource ImageSource { get; set; }
 
         public ObservableCollection<ImageSource> ImageSources { get; set; }
+
     }
 }

@@ -30,10 +30,10 @@
             <Grid.Background>
                 <ImageBrush ImageSource="/Assets/Images/ParallaxHeader.jpg" Stretch="UniformToFill"/>
             </Grid.Background>
-            <TextBlock HorizontalAlignment="Left" Margin="54,42,0,0" Text="Hey, Billy!" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="124" Foreground="White" FontSize="20"/>
-            <RichTextBlock HorizontalAlignment="Left" Margin="54,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="108" Width="523" Foreground="White" FontSize="40" FontWeight="Bold">
-                <Paragraph>Let's find the best place</Paragraph>
-                <Paragraph>for your vacation</Paragraph>
+            <TextBlock HorizontalAlignment="Left" Margin="54,42,0,0" Text="Ласкаво просимо!" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="176" Foreground="White" FontSize="20"/>
+            <RichTextBlock HorizontalAlignment="Left" Margin="54,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="108" Width="713" Foreground="White" FontSize="40" FontWeight="Bold">
+                <Paragraph>Давайте знайдемо найкраще місце</Paragraph>
+                <Paragraph>для вашого відпочинку</Paragraph>
             </RichTextBlock>
         </Grid>
         <Grid Background="White" Grid.Column="1" Grid.Row="1" >
@@ -54,10 +54,10 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Image Grid.Column="0" Width="30" Height="30" Source="/Assets/Images/location.png" HorizontalAlignment="Right" VerticalAlignment="Center" />
-                    <TextBox TextChanged="TextBox_TextChanged" Style="{StaticResource TextBoxStyleWithoutBorder}" Grid.Column="1" PlaceholderText="Where are you going?" FontSize="14" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Width="162" BorderBrush="#66FFFFFF"/>
+                    <TextBox TextChanged="TextBox_TextChanged" Style="{StaticResource TextBoxStyleWithoutBorder}" Grid.Column="1" PlaceholderText="Куди бажаєте?" FontSize="14" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Width="162" BorderBrush="#66FFFFFF"/>
                 </Grid>
 
-                <Button Grid.Column="5" Height="50" Width="136" CornerRadius="0,12,12,0" Content="Find City" HorizontalAlignment="Center" Background="#7C8F0AB6"/>
+                <Button Grid.Column="5" Height="50" Width="136" CornerRadius="0,12,12,0" Content="Знайти місто" HorizontalAlignment="Center" Background="#7C8F0AB6"/>
             </Grid>
         </Grid>
     </Grid>

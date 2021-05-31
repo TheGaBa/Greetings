@@ -15,7 +15,7 @@ namespace Database.Models
         public double Cost { get; set; }
         
         public int Time { get; set; }
-        
+
         public string Address { get; set; }
         
         public byte[] Image { get; set; }

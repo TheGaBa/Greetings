@@ -37,42 +37,42 @@
             </muxc:AnimatedVisualPlayer>
 
             <Grid Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="500" Width="310">
-                <TextBlock Text="Sing Up To Greetings" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" FontSize="35" FontWeight="Bold" FontFamily="Agency FB" />
+                <TextBlock Text="Увійдіть до Greetings" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" FontSize="30" FontWeight="Bold" FontFamily="Agency FB" />
                 <!--<Pivot Style="{StaticResource MyPivotStyle}" VerticalAlignment="Top" HorizontalAlignment="Center" Width="300" Height="320" Margin="0,65,0,0">-->
                 <Pivot VerticalAlignment="Top" HorizontalAlignment="Center" Width="300" Height="320" Margin="0,65,0,0">
-                    <PivotItem Header="Login" >
+                    <PivotItem Header="Логін" >
                         <StackPanel >
                             <StackPanel HorizontalAlignment="Center" Margin="0, 15, 0, 15">
-                                <TextBlock Text="Username" FontSize="20" FontFamily="Agency FB"/>
+                                <TextBlock Text="Ім'я користувача" FontSize="20" FontFamily="Agency FB"/>
                                 <TextBox Width="240" Text="{x:Bind ViewModel.Login, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel HorizontalAlignment="Center" Margin="0, 0, 0, 15">
-                                <TextBlock Text="Password" FontSize="20" FontFamily="Agency FB"/>
+                                <TextBlock Text="Пароль" FontSize="20" FontFamily="Agency FB"/>
                                 <PasswordBox Width="240" Password="{x:Bind ViewModel.Password, Mode=TwoWay}" />
                             </StackPanel>
                             <Button 
                                 Width="240" 
                                 Height="40" 
                                 HorizontalAlignment="Center" 
-                                Content="Login"
+                                Content="Увійти"
                                 Command="{x:Bind ViewModel.LoginCommand}"/>
                         </StackPanel>
                     </PivotItem>
-                    <PivotItem Header="Register" >
+                    <PivotItem Header="Реєстрація" >
                         <StackPanel >
                             <StackPanel HorizontalAlignment="Center" Margin="0, 15, 0, 15">
-                                <TextBlock Text="Username" FontSize="20" FontFamily="Agency FB"/>
+                                <TextBlock Text="Ім'я користувача" FontSize="20" FontFamily="Agency FB"/>
                                 <TextBox Width="240" Text="{x:Bind ViewModel.Login, Mode=TwoWay}"/>
                             </StackPanel>
                             <StackPanel HorizontalAlignment="Center" Margin="0, 0, 0, 15">
-                                <TextBlock Text="Password" FontSize="20" FontFamily="Agency FB"/>
+                                <TextBlock Text="Пароль" FontSize="20" FontFamily="Agency FB"/>
                                 <PasswordBox Width="240" Password="{x:Bind ViewModel.Password, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel HorizontalAlignment="Center" Margin="0, 0, 0, 15">
-                                <TextBlock Text="Repeat Password" FontSize="20" FontFamily="Agency FB"/>
+                                <TextBlock Text="Підтвердіть пароль" FontSize="20" FontFamily="Agency FB"/>
                                 <PasswordBox Width="240" Password="{x:Bind ViewModel.RepeatPassword, Mode=TwoWay}" />
                             </StackPanel>
-                            <Button Command="{x:Bind ViewModel.RegisterCommand}" Width="240" Height="40" HorizontalAlignment="Center" Content="Register"/>
+                            <Button Command="{x:Bind ViewModel.RegisterCommand}" Width="240" Height="40" HorizontalAlignment="Center" Content="Зареєструватися"/>
                         </StackPanel>
                     </PivotItem>
                 </Pivot>

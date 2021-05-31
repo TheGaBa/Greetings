@@ -6,6 +6,9 @@ using System.Windows.Input;
 using Database;
 using System.Linq;
 using Database.Models;
+using Windows.Storage;
+using Greetings.Helpers;
+using Windows.UI.Popups;
 
 namespace Greetings.ViewModels
 {
@@ -47,43 +50,91 @@ namespace Greetings.ViewModels
 
         private async void LoginMethod()
         {
-            //if (String.IsNullOrEmpty(_login)) return;
-            //if (String.IsNullOrEmpty(_password)) return;
 
-            // User userToLogin = await ApplicationData.Current.LocalFolder.ReadAsync<User>("UsersRegister");
+            if (String.IsNullOrEmpty(_login))
+            {
+                var dialog = new MessageDialog("Введіть логін");
+                await dialog.ShowAsync();
+                return;
+            }
+            if (String.IsNullOrEmpty(_password))
+            {
+                var dialog = new MessageDialog("Введіть пароль");
+                await dialog.ShowAsync();
+                return;
+            }
+            User userToLogin = await ApplicationData.Current.LocalFolder.ReadAsync<User>("UsersRegister");
 
-            //User userToLogin;
+            using (MyDBContext context = new MyDBContext())
+            {
+                userToLogin = context.Users.FirstOrDefault(user => user.Login == _login);
+            }
 
-            //using (MyDBContext context = new MyDBContext())
-            //{
-            //    userToLogin = context.Users.FirstOrDefault(user => user.Login == _login);
-            //}
-
-            //if (userToLogin != null && userToLogin.Password == _password)
-            //{
-            //    NavigationService.Navigate(typeof(MainPage));
-            //}
-
-            NavigationService.Navigate(typeof(MainPage));
+            if (userToLogin != null && userToLogin.Password == _password)
+            {
+                NavigationService.Navigate(typeof(MainPage));
+            }
+            else
+            {
+                var dialog = new MessageDialog("Неправильно введено логін або пароль");
+                await dialog.ShowAsync();
+            }
         }
 
         private async void RegisterMethod()
         {
-            if (String.IsNullOrEmpty(_login)) return;
-            if (String.IsNullOrEmpty(_password)) return;
-            if (String.IsNullOrEmpty(_repeatPassword)) return;
-            if (_password != _repeatPassword) return;
+            if (String.IsNullOrEmpty(_login))
+            {
+                var dialog = new MessageDialog("Введіть логін");
+                await dialog.ShowAsync();
+                return;
+            }
+            if (String.IsNullOrEmpty(_password))
+            {
+                var dialog = new MessageDialog("Введіть пароль");
+                await dialog.ShowAsync();
+                return;
+            }
+            if (String.IsNullOrEmpty(_repeatPassword))
+            {
+                var dialog = new MessageDialog("Введіть повторний пароль");
+                await dialog.ShowAsync();
+                return;
+            }
+            if (_password != _repeatPassword)
+            {
+                var dialog = new MessageDialog("Паролі не співпадають");
+                await dialog.ShowAsync();
+                return;
+            }
+
 
             // User currentUser = new User(_login, _password);
             // await ApplicationData.Current.LocalFolder.SaveAsync("UsersRegister", currentUser);
 
+            User userToLogin = await ApplicationData.Current.LocalFolder.ReadAsync<User>("UsersRegister");
+
             using (MyDBContext context = new MyDBContext())
             {
-                context.Users.Add(new User(_login, _password));
-                await context.SaveChangesAsync();
+                userToLogin = context.Users.FirstOrDefault(user => user.Login == _login);
             }
 
-            LoginMethod();
+            if (userToLogin != null)
+            {
+                var dialog = new MessageDialog("Користувач з таким логіном вже існує");
+                await dialog.ShowAsync();
+            }
+            else
+            {
+                using (MyDBContext context = new MyDBContext())
+                {
+                    context.Users.Add(new User(_login, _password));
+                    await context.SaveChangesAsync();
+                }
+                LoginMethod();
+            }
+
+
         }
     }
 }

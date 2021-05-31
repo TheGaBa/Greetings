@@ -393,6 +393,16 @@ namespace Database.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] kyoto2 {
+            get {
+                object obj = ResourceManager.GetObject("kyoto2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] La_convention_center {
             get {
                 object obj = ResourceManager.GetObject("La_convention_center", resourceCulture);

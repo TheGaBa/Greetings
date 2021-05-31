@@ -93,7 +93,7 @@
             BorderBrush="Transparent"
             DetailsTemplate="{StaticResource DetailsTemplate}"
             ItemsSource="{x:Bind ViewModel.Places}"
-            ListHeader="Это Сан Франциско, город в стиле диско"
+            ListHeader="{x:Bind ViewModel.CityName, Mode=TwoWay}"
             ListHeaderTemplate="{StaticResource MinimalMasterHeaderTemplate}"
             ItemTemplate="{StaticResource ItemTemplate}"
             NoSelectionContentTemplate="{StaticResource NoSelectionContentTemplate}"
