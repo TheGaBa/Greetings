@@ -127,7 +127,6 @@
     <Compile Include="Controls\PlaseDetailControl.xaml.cs">
       <DependentUpon>PlaseDetailControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\Comparers\CityComparer.cs" />
     <Compile Include="Helpers\ImageConverter.cs" />
     <Compile Include="Helpers\Json.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
